@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility - Safe Zone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reduced footer padding */
+        .site-footer {
+            padding: 15px 0;
+        }
+        /* Adjust content spacing if needed */
+        .footer-about, 
+        .footer-categories, 
+        .footer-legal, 
+        .footer-social {
+            padding: 5px 15px;
+        }
+        /* Custom back button position for Braille page */
+        .back-button {
+            top: 60px !important; /* Moved up by 2cm from 200px */
+            left: 60px !important; /* Moved right by 2cm from 20px */
+        }
+    </style>
+</head>
+<body class="category-page">
+
+    <header>
+        <div class="container header-container">
+            <div class="logo-area">
+                                <a href="index.html"><img src="images/Logo Safe zone.jpg" alt="Safe Zone Logo" class="main-logo"></a>
+                                <img src="images/40 YEAR LOGO.png" alt="40 Years of Excellence" class="secondary-logo">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                    <li><a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Fixed Home Button -->
+    <div class="back-button">
+        <a href="index.html" title="Go to Home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+    </div>
+    
+    <nav class="product-nav">
+        <div class="container">
+            <ul>
+                <li class="dropdown">
+                    <a href="braille.html">Braille <span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu vertical-menu">
+                        <li><a href="braille.html#braille-signages">1. Braille Signages</a></li>
+                        <li><a href="braille.html#braille-handrail">2. Braille Handrail Signs</a></li>
+                        <li><a href="braille.html#pu-tactile-tiles">3. PU Tactile Tiles, Studs & Directional Strips</a></li>
+                        <li><a href="braille.html#wc-alarm-system">4. Differently-Abled W/C Alarm System</a></li>
+                        <li><a href="braille.html#braille-layout-plan">5. Braille Tactile Layout Plan</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="road-signs.html">Road Signs &#9662;</a>
+                    <ul class="dropdown-menu vertical-menu">
+                        <li><a href="#">Highway / Road Signs</a></li>
+                        <li><a href="#">Retro-Reflective Road Signs</a></li>
+                        <li><a href="#">Cautionary Signs</a></li>
+                        <li><a href="#">Mandatory Signs</a></li>
+                        <li><a href="#">Informatory Signs</a></li>
+                        <li><a href="#">Railway Signs</a></li>
+                        <li><a href="#">Airport Signs</a></li>
+                        <li><a href="#">Photoluminescent Signs</a></li>
+                        <li><a href="#">Exit / Emergency Light Signs</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="fire-sign.html">Fire Sign <span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu vertical-menu">
+                        <li><a href="fire-sign.html#fire-exit">Fire Signs</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="road-safety.html">Road Safety &#9662;</a>
+                    <ul class="dropdown-menu vertical-menu">
+                        <li><a href="#traffic-cone">Traffic Cone</a></li>
+                        <li><a href="#traffic-barricades">Traffic Barricades / Expandable Barriers</a></li>
+                        <li><a href="#speed-bumps">Speed Bumps & Rumblers</a></li>
+                        <li><a href="#delineators">Delineators</a></li>
+                        <li><a href="#blinkers">Blinkers / Road Lamps</a></li>
+                        <li><a href="#cat-eyes">Cat Eyes / Pavement Markers / Road Studs</a></li>
+                        <li><a href="#solar-studs">Solar Studs / Solar Delineators</a></li>
+                        <li><a href="#spring-post">Spring Post</a></li>
+                        <li><a href="#centre-verge">Centre Verge</a></li>
+                        <li><a href="#lds">Linear Delineation System (LDS)</a></li>
+                        <li><a href="#afp-tape">Aluminium Backed Flexible Prismatic Tape (AFP)</a></li>
+                        <li><a href="#reflectors">Reflectors / Conspicuity Tapes</a></li>
+                        <li><a href="#caution-tape">Caution Tape</a></li>
+                        <li><a href="#median-markers">Median Markers</a></li>
+                        <li><a href="#car-stopper">Car Stopper / Parking Lot Solutions / Rubber Wall Protector</a></li>
+                        <li><a href="#guard-rail">Guard Rail / W-Beam Crash Barrier & GR Reflector</a></li>
+                        <li><a href="#anti-glare">Anti-Glare</a></li>
+                    </ul>
+                </li>
+                <style>
+                .dropdown-menu.vertical-menu {
+                    display: none;
+                    position: absolute;
+                    left: 0;
+                    width: 280px; /* Reduced width */
+                    max-width: 95vw;
+                    height: auto;
+                    max-height: 240px; /* Height for exactly 5 items (40px each * 5 + padding) */
+                    padding: 8px 0;
+                    list-style: none;
+                    text-align: left;
+                    margin-top: 8px;
+                    overflow-y: auto;
+                    overflow-x: visible; /* Changed to visible to show full text */
+                    font-family: 'Segoe UI', Arial, sans-serif;
+                    scrollbar-width: thin;
+                    scrollbar-color: #b3c6e0 #f4f7fa91;
+                    z-index: 1000;
+                    background: rgba(255, 255, 255, 0.98);
+                    border-radius: 8px;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+                    -webkit-overflow-scrolling: touch;
+                }
+                
+                /* Custom scrollbar for WebKit browsers */
+                .dropdown-menu.vertical-menu::-webkit-scrollbar {
+                    width: 10px;
+                }
+                
+                .dropdown-menu.vertical-menu::-webkit-scrollbar-track {
+                    background: #f4f7fa91;
+                    border-radius: 10px;
+                    margin: 8px 0;
+                }
+                
+                .dropdown-menu.vertical-menu::-webkit-scrollbar-thumb {
+                    background-color: #b3c6e0;
+                    border-radius: 10px;
+                    border: 2px solid #f4f7fa91;
+                    background-clip: padding-box;
+                }
+                
+                .dropdown-menu.vertical-menu::-webkit-scrollbar-thumb:hover {
+                    background-color: #8fa8d1;
+                }
+                
+                .dropdown-menu.vertical-menu li {
+                    display: block;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    text-align: left;
+                    transition: background 0.2s;
+                }
+                
+                .dropdown-menu.vertical-menu li a {
+                    width: calc(100% - 16px); /* Adjusted for new width */
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    min-height: 40px;
+                    max-height: none; /* Allow text to wrap */
+                    padding: 8px 10px;
+                    box-sizing: border-box;
+                    font-size: 0.75rem; /* Slightly smaller font */
+                    color: #2c2c2c;
+                    text-decoration: none;
+                    text-align: left;
+                    line-height: 1.4;
+                    transition: all 0.18s ease;
+                    position: relative;
+                    background: rgba(255, 248, 240, 0.95);
+                    margin: 2px 8px; /* Reduced margin */
+                    border-radius: 4px;
+                    border-left: 3px solid #ff8c42;
+                    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+                    white-space: normal; /* Allow text to wrap */
+                    word-break: break-word; /* Break long words if needed */
+                }
+                
+                .dropdown-menu.vertical-menu li a:hover {
+                    color: #d35400;
+                    font-weight: 500;
+                    padding-left: 14px; /* Adjusted for new width */
+                    background: rgba(255, 228, 196, 0.95);
+                    border-left-color: #ff6b1a;
+                    transform: translateX(2px);
+                    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+                }
+                
+                .dropdown-menu.vertical-menu li:not(:last-child) a {
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                }
+                
+                .dropdown-menu.vertical-menu li a::before {
+                    content: '\25B6';
+                    color: #0056b3;
+                    font-size: 0.7em; /* Smaller arrow */
+                    margin-right: 6px;
+                    opacity: 0.7;
+                    transition: all 0.18s;
+                }
+                
+                .dropdown-menu.vertical-menu li a:hover::before {
+                    color: #fff;
+                }
+                
+                /* Show dropdown on hover */
+                .dropdown {
+                    position: relative;
+                }
+                
+                .dropdown-menu.vertical-menu {
+                    left: 0;
+                    right: auto;
+                    transform: none;
+                }
+                
+                /* Remove hover behavior - using click now */
+                /* .dropdown:hover .dropdown-menu.vertical-menu {
+                    display: block;
+                } */
+                
+                @media (max-width: 600px) {
+                    .dropdown-menu.vertical-menu {
+                        min-width: 160px !important;
+                        width: 98vw;
+                        padding: 6px 0;
+                    }
+                    .dropdown-menu.vertical-menu li a {
+                        padding: 8px 10px;
+                        font-size: 0.98rem;
+                    }
+                }
+                </style>
+                </li>
+                <li class="dropdown">
+                    <a href="accessibility.html">Accessibility &#9662;</a>
+                    <ul class="dropdown-menu vertical-menu">
+                        <li><a href="#layout-plans">Layout Plans</a></li>
+                        <li><a href="#tactile-map">Tactile Map</a></li>
+                        <li><a href="#audio-tactile-map">Audio Tactile Map</a></li>
+                        <li><a href="#handrail-braille-indicator">Handrail Braille Indicator</a></li>
+                        <li><a href="#edge-strips">EDGE Strips for Staircase</a></li>
+                        <li><a href="#pu-tactile-tiles">PU Tactile Tiles</a></li>
+                        <li><a href="#tgsi">TGSI (Tactile Ground Surface Indicator)</a></li>
+                        <li><a href="#ss-railings">SS Railings</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="vehicle-graphics.html">Vehicle Graphics <span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu vertical-menu">
+                        <li><a href="vehicle-graphics.html#reflective-vehicle-tapes">Reflective Vehicle Tapes</a></li>
+                        <li><a href="vehicle-graphics.html#vehicle-branding">Vehicle Graphics</a></li>
+                        <li><a href="vehicle-graphics.html#number-plates">Revolving Lights Siren & Strobe Lights</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="security-equipments.html">Security Equipments <span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu vertical-menu">
+                        <li><a href="security-equipments.html#handheld-detectors">Handheld Metal Detectors</a></li>
+                        <li><a href="security-equipments.html#door-frame-detectors">Door Frame Metal Detectors</a></li>
+                        <li><a href="security-equipments.html#xray-baggage-scanners">Traffic Convex Mirror</a></li>
+                        <li><a href="security-equipments.html#under-vehicle-scanners">Search Ligh LED/Halogen</a></li>
+                        <li><a href="security-equipments.html#cctv-cameras">Automatic Traffic Boom Barrier</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="indoor-sign.html">Indoor Sign <span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu vertical-menu">
+                        <li><a href="indoor-sign.html#floor-directions">Floor Directions</a></li>
+                        <li><a href="indoor-sign.html#hospital-signs">Hospital Signs</a></li>
+                        <li><a href="indoor-sign.html#office-signs">Inauguration Signs</a></li>
+                        <li><a href="indoor-sign.html#restroom-signs">Safety Signs</a></li>
+                        <li><a href="indoor-sign.html#staircase-signs">Q-Managers & Clasic Posts with Velvet Ropes</a></li>
+                        <li><a href="indoor-sign.html#staircase-signs">Name Plates</a></li>
+                        <li><a href="indoor-sign.html#elevator-signs">Floor Directory/Informatory Board</a></li>
+                    </ul>
+                </li>
+                 <li><a href="PDF/Anand Sales India Catalog.pdf" target="_blank" class="download-button">Download <span class="arrow">&darr;</span></a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <header class="video-header" style="position: relative; height: 45vh; min-height: 250px; overflow: hidden;">
+            <img src="images/Access.png" alt="Accessibility Header" style="position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4);">
+                <div style="display: flex; height: 100%; align-items: center; justify-content: center; padding: 40px 0;">
+                    <div class="container" style="flex: 1; padding: 0 5%;">
+                        <div style="max-width: 800px; padding-bottom: 20px;">
+                            <h1 style="font-size: 3.5rem; margin: 0 0 0.5rem 0; text-shadow: 0 2px 4px rgba(0,0,0,0.3); color: white; line-height: 1.1;">Accessibility Solutions</h1>
+                            <p style="font-size: 1.2rem; margin: 0; text-shadow: 0 1px 3px rgba(0,0,0,0.3); color: white;">Comprehensive accessibility solutions for all your needs</p>
+                        </div>
+                    </div>
+                    <div style="flex: 1; display: flex; justify-content: center; align-items: center; padding: 0 5%; margin: 0;">
+                        <div style="background: rgba(255, 255, 255, 0.336); border-radius: 10px; padding: 20px 25px; max-width: 500px; max-height: 80%; overflow-y: auto; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid rgba(255, 255, 255, 0.9); backdrop-filter: blur(8px);">
+                            <h3 style="color: #ffffff; margin-top: 0; font-size: 1.4rem; margin-bottom: 0.8rem; font-weight: 700; text-shadow: 0 1px 2px rgba(0,0,0,0.1);">Our Expertise</h3>
+                            <p style="color: #222; line-height: 1.6; margin: 0; font-size: 0.9rem; font-weight: 500;">Accessibility solutions are essential for creating inclusive environments that accommodate everyone, including people with disabilities. We specialize in designing and manufacturing high-quality accessibility products that comply with international standards. Our range includes tactile indicators, braille signs, accessible wayfinding systems, and other assistive technologies that enhance mobility and independence for all individuals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container" style="max-width: 1200px; margin: 20px auto 0; padding: 0 20px;">
+            <div class="category-description" style="text-align: left; margin: 0; padding: 0;">
+            </div>
+            <!-- Sub category Section -->
+            <section id="layout-plans" style="margin: 0 auto 12px auto !important; padding: 30px 20px !important; scroll-margin-top: 15vh; max-width: 1200px;">
+                <div style="display: flex; align-items: flex-start; gap: 32px; flex-wrap: wrap; justify-content: space-between;">
+                    <div style="flex: 1 1 340px; min-width: 220px; max-width: 700px;">
+                        <h2 style="margin: 0 0 8px 0 !important; color: #0056b3; font-size: 20px !important; text-align: left; padding: 0 0 0 10px !important; border-left: 4px solid #0056b3; line-height: 1.2 !important;"><strong>Layout Plans</strong></h2>
+                        <a href="#layout-plans" style="color: #0056b3; font-size: 1.08rem; text-decoration: underline; font-weight: 500;">Layout Plans</a>
+                        <p style="margin: 10px 0 0 0; color: #333; font-size: 1rem; line-height: 1.5;">
+                            Layout plans with tactile and Braille elements help visually impaired users navigate buildings independently by understanding spatial structures. These plans provide a clear, touchable overview of the building's layout, including key areas like entrances, exits, restrooms, and emergency exits. Typically installed at main entry points, they enable users to form a mental map of the space before navigating. Our layout plans are designed to meet international accessibility standards, ensuring they are intuitive and easy to understand for all users.
+                        </p>
+                        <div style="margin: 15px 0; padding: 12px 15px; background-color: #f8f9fa; border-left: 4px solid #ff8c42; border-radius: 4px;">
+                            <strong style="display: block; margin-bottom: 5px; color: #333; font-size: 0.95rem;">Materials Used:</strong>
+                            <p style="margin: 0; color: #555; font-size: 0.9rem; line-height: 1.5;">
+                                Acrylic sheet, Braille dots, vinyl print, tactile film
+                            </p>
+                        </div>
+                        <button class="btn quote-btn" style="background-color: #0056b3; color: #fff; padding: 7px 22px; font-size: 0.98rem; border: none; border-radius: 5px; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.08); width: auto; min-width: 120px; margin-top: 12px;" onclick="openQuoteForm('Layout Plans')">Get Quote</button>
+                    </div>
+                    <div style="flex: 0 0 400px; display: flex; justify-content: flex-end; align-items: flex-start; min-width: 300px; max-width: 440px;">
+                        <img src="images/Cat/Acces1.png" alt="Layout Plans with Tactile Elements" style="width: 100%; max-width: 400px; height: auto; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); background: #f8f9fa;" loading="lazy">
+                    </div>
+                </div>
+            </section>
+            <!-- 2nd Sub category Section -->
+            <div style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; background: #eaf1f7;">
+                <section id="tactile-map" style="margin: 0 auto 12px auto !important; padding: 30px 20px !important; scroll-margin-top: 15vh; max-width: 1200px;">
+                    <div style="display: flex; align-items: flex-start; gap: 32px; flex-wrap: wrap; justify-content: space-between;">
+                        <div style="flex: 0 0 400px; display: flex; justify-content: flex-start; align-items: flex-start; min-width: 300px; max-width: 440px;">
+                            <img src="images/Cat/Acces2.png" alt="Tactile Map" style="width: 100%; max-width: 400px; height: auto; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); background: #f8f9fa;" loading="lazy">
+                        </div>
+                        <div style="flex: 1 1 340px; min-width: 220px; max-width: 700px;">
+                            <h2 style="margin: 0 0 8px 0 !important; color: #0056b3; font-size: 20px !important; text-align: left; padding: 0 0 0 10px !important; border-left: 4px solid #0056b3; line-height: 1.2 !important;"><strong>Tactile Map</strong></h2>
+                            <a href="#tactile-map" style="color: #0056b3; font-size: 1.08rem; text-decoration: underline; font-weight: 500;">Tactile Map</a>
+                            <p style="margin: 10px 0 0 0; color: #333; font-size: 1rem; line-height: 1.5;">
+                                Tactile maps feature raised surfaces and textures that allow visually impaired individuals to understand floor layouts and pathways through touch. These maps enhance spatial awareness and independence by providing a detailed, touchable representation of the surrounding environment. Ideal for complex buildings, campuses, and public spaces, our tactile maps use standardized symbols and textures to indicate different areas, pathways, and points of interest. They are designed to be intuitive, with clear tactile differentiation between different spaces and features, making navigation easier and more predictable for users with visual impairments.
+                            </p>
+                            <div style="margin: 15px 0; padding: 12px 15px; background-color: #f8f9fa; border-left: 4px solid #ff8c42; border-radius: 4px;">
+                                <strong style="display: block; margin-bottom: 5px; color: #333; font-size: 0.95rem;">Materials Used:</strong>
+                                <p style="margin: 0; color: #555; font-size: 0.9rem; line-height: 1.5;">
+                                    Polycarbonate, ABS plastic, aluminum base, UV-printing
+                                </p>
+                            </div>
+                            <button class="btn quote-btn" style="background-color: #0056b3; color: #fff; padding: 7px 22px; font-size: 0.98rem; border: none; border-radius: 5px; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.08); width: auto; min-width: 120px; margin-top: 12px;" onclick="openQuoteForm('Tactile Map')">Get Quote</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- 3rd Sub category Section -->
+            <section id="audio-tactile-map" style="margin: 0 auto 12px auto !important; padding: 30px 20px !important; border-bottom: 1px solid #e0e0e0; scroll-margin-top: 15vh; max-width: 1200px;">
+                <div style="display: flex; align-items: flex-start; gap: 32px; flex-wrap: wrap; justify-content: space-between;">
+                    <div style="flex: 1 1 340px; min-width: 220px; max-width: 700px;">
+                        <h2 style="margin: 0 0 8px 0 !important; color: #0056b3; font-size: 20px !important; text-align: left; padding: 0 0 0 10px !important; border-left: 4px solid #0056b3; line-height: 1.2 !important;"><strong>Audio Tactile Map</strong></h2>
+                        <a href="#audio-tactile-map" style="color: #0056b3; font-size: 1.08rem; text-decoration: underline; font-weight: 500;">Audio Tactile Map</a>
+                        <p style="margin: 10px 0 0 0; color: #333; font-size: 1rem; line-height: 1.5;">
+                            Audio tactile maps combine the benefits of tactile graphics with audio descriptions to provide comprehensive navigation assistance. When users touch specific areas on the map, they trigger audio messages that provide detailed information about that location. These interactive maps are particularly valuable in transportation hubs, shopping centers, and educational institutions where complex spatial information needs to be conveyed. Our audio tactile maps feature high-quality speakers, intuitive touch points, and clear, concise audio recordings in multiple languages to accommodate diverse user needs.
+                        </p>
+                        <div style="margin: 15px 0; padding: 12px 15px; background-color: #f8f9fa; border-left: 4px solid #ff8c42; border-radius: 4px;">
+                            <strong style="display: block; margin-bottom: 5px; color: #333; font-size: 0.95rem;">Materials Used:</strong>
+                            <p style="margin: 0; color: #555; font-size: 0.9rem; line-height: 1.5;">
+                                Polycarbonate panel, electronic voice module, stainless steel buttons, audio playback system
+                            </p>
+                        </div>
+                        <button class="btn quote-btn" style="background-color: #0056b3; color: #fff; padding: 7px 22px; font-size: 0.98rem; border: none; border-radius: 5px; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.08); width: auto; min-width: 120px; margin-top: 12px;" onclick="openQuoteForm('Audio Tactile Map')">Get Quote</button>
+                    </div>
+                    <div style="flex: 0 0 400px; display: flex; justify-content: flex-end; align-items: flex-start; min-width: 300px; max-width: 440px;">
+                        <img src="images/Cat/Acces3.png" alt="Audio Tactile Map" style="width: 100%; max-width: 400px; height: auto; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); background: #f8f9fa;" loading="lazy">
+                    </div>
+                </div>
+            </section>
+            </div>
+            
+            <!-- 4th Sub category Section -->
+            <div style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; background: #eaf1f7;">
+                <section id="handrail-braille-indicator" style="margin: 0 auto 12px auto !important; padding: 30px 20px !important; scroll-margin-top: 15vh; max-width: 1200px;">
+                    <div style="display: flex; align-items: flex-start; gap: 32px; flex-wrap: wrap; justify-content: space-between;">
+                        <div style="flex: 0 0 400px; display: flex; justify-content: flex-start; align-items: flex-start; min-width: 300px; max-width: 440px;">
+                            <img src="images/Cat/Acces4.png" alt="Handrail Braille Indicator" style="width: 100%; max-width: 400px; height: auto; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); background: #f8f9fa;" loading="lazy">
+                        </div>
+                        <div style="flex: 1 1 340px; min-width: 220px; max-width: 700px;">
+                            <h2 style="margin: 0 0 8px 0 !important; color: #0056b3; font-size: 20px !important; text-align: left; padding: 0 0 0 10px !important; border-left: 4px solid #0056b3; line-height: 1.2 !important;"><strong>Handrail Braille Indicator</strong></h2>
+                            <a href="#handrail-braille-indicator" style="color: #0056b3; font-size: 1.08rem; text-decoration: underline; font-weight: 500;">Handrail Braille Indicator</a>
+                            <p style="margin: 10px 0 0 0; color: #333; font-size: 1rem; line-height: 1.5;">
+                                Handrail Braille indicators provide essential navigation information directly on handrails, helping visually impaired individuals identify floor levels, directions, and important locations while moving through a building. These indicators are seamlessly integrated into handrails at consistent intervals and feature both raised Braille and tactile characters. Made from durable materials that withstand frequent touch, they offer a reliable wayfinding solution that complements other accessibility features. Our Handrail Braille indicators are designed to meet international accessibility standards, ensuring they are easily detectable and readable by touch.
+                            </p>
+                            <div style="margin: 15px 0; padding: 12px 15px; background-color: #f8f9fa; border-left: 4px solid #ff8c42; border-radius: 4px;">
+                                <strong style="display: block; margin-bottom: 5px; color: #333; font-size: 0.95rem;">Materials Used:</strong>
+                                <p style="margin: 0; color: #555; font-size: 0.9rem; line-height: 1.5;">
+                                    Stainless steel, anodized aluminum, or powder-coated metal with raised Braille and tactile characters
+                                </p>
+                            </div>
+                            <button class="btn quote-btn" style="background-color: #0056b3; color: #fff; padding: 7px 22px; font-size: 0.98rem; border: none; border-radius: 5px; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.08); width: auto; min-width: 120px; margin-top: 12px;" onclick="openQuoteForm('Handrail Braille Indicator')">Get Quote</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 5th Sub category Section -->
+            <section id="edge-strips-staircase" style="margin: 0 auto 12px auto !important; padding: 30px 20px !important; border-bottom: 1px solid #e0e0e0; scroll-margin-top: 15vh; max-width: 1200px;">
+                <div style="display: flex; align-items: flex-start; gap: 32px; flex-wrap: wrap; justify-content: space-between;">
+                    <div style="flex: 1 1 340px; min-width: 220px; max-width: 700px;">
+                        <h2 style="margin: 0 0 8px 0 !important; color: #0056b3; font-size: 20px !important; text-align: left; padding: 0 0 0 10px !important; border-left: 4px solid #0056b3; line-height: 1.2 !important;"><strong>EDGE Strips for Staircase</strong></h2>
+                        <a href="#edge-strips-staircase" style="color: #0056b3; font-size: 1.08rem; text-decoration: underline; font-weight: 500;">EDGE Strips for Staircase</a>
+                        <p style="margin: 10px 0 0 0; color: #333; font-size: 1rem; line-height: 1.5;">
+                            EDGE (Enhanced Detectable Ground Edge) Strips are essential safety features for staircases, providing both visual and tactile cues to mark step edges. These strips enhance stair safety by clearly defining each step's edge, reducing the risk of trips and falls for all users, especially those with visual impairments. The high-contrast colors and slip-resistant surface make them visible in various lighting conditions while providing additional traction. Our EDGE Strips are designed to be durable, weather-resistant, and easy to install on various staircase materials including concrete, wood, and metal.
+                        </p>
+                        <div style="margin: 15px 0; padding: 12px 15px; background-color: #f8f9fa; border-left: 4px solid #ff8c42; border-radius: 4px;">
+                            <strong style="display: block; margin-bottom: 5px; color: #333; font-size: 0.95rem;">Materials Used:</strong>
+                            <p style="margin: 0; color: #555; font-size: 0.9rem; line-height: 1.5;">
+                                Anodized aluminum or stainless steel with anti-slip surface treatment, available in high-visibility colors
+                            </p>
+                        </div>
+                        <button class="btn quote-btn" style="background-color: #0056b3; color: #fff; padding: 7px 22px; font-size: 0.98rem; border: none; border-radius: 5px; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.08); width: auto; min-width: 120px; margin-top: 12px;" onclick="openQuoteForm('EDGE Strips for Staircase')">Get Quote</button>
+                    </div>
+                    <div style="flex: 0 0 400px; display: flex; justify-content: flex-end; align-items: flex-start; min-width: 300px; max-width: 440px;">
+                        <img src="images/Cat/Acces5.png" alt="EDGE Strips for Staircase" style="width: 100%; max-width: 400px; height: auto; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); background: #f8f9fa;" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6th Sub category Section -->
+            <div style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; background: #eaf1f7;">
+                <section id="pu-tactile-tiles" style="margin: 0 auto 12px auto !important; padding: 30px 20px !important; scroll-margin-top: 15vh; max-width: 1200px;">
+                    <div style="display: flex; align-items: flex-start; gap: 32px; flex-wrap: wrap; justify-content: space-between;">
+                        <div style="flex: 0 0 400px; display: flex; justify-content: flex-start; align-items: flex-start; min-width: 300px; max-width: 440px;">
+                            <img src="images/Cat/Acces6.png" alt="PU Tactile Tiles" style="width: 100%; max-width: 400px; height: auto; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); background: #f8f9fa;" loading="lazy">
+                        </div>
+                        <div style="flex: 1 1 340px; min-width: 220px; max-width: 700px;">
+                            <h2 style="margin: 0 0 8px 0 !important; color: #0056b3; font-size: 20px !important; text-align: left; padding: 0 0 0 10px !important; border-left: 4px solid #0056b3; line-height: 1.2 !important;"><strong>PU Tactile Tiles</strong></h2>
+                            <a href="#pu-tactile-tiles" style="color: #0056b3; font-size: 1.08rem; text-decoration: underline; font-weight: 500;">PU Tactile Tiles</a>
+                            <p style="margin: 10px 0 0 0; color: #333; font-size: 1rem; line-height: 1.5;">
+                                PU (Polyurethane) Tactile Tiles are durable, slip-resistant surface indicators designed for both indoor and outdoor use. These tiles provide essential tactile guidance for visually impaired individuals, featuring raised patterns that can be felt underfoot or with a cane. Available in various colors with high visual contrast, they help mark pathways, platform edges, and hazard areas. Our PU Tactile Tiles are weather-resistant, UV-stable, and maintain their color and texture even in high-traffic areas. They are easy to install and can be cut to fit specific spaces without specialized tools.
+                            </p>
+                            <div style="margin: 15px 0; padding: 12px 15px; background-color: #f8f9fa; border-left: 4px solid #ff8c42; border-radius: 4px;">
+                                <strong style="display: block; margin-bottom: 5px; color: #333; font-size: 0.95rem;">Materials Used:</strong>
+                                <p style="margin: 0; color: #555; font-size: 0.9rem; line-height: 1.5;">
+                                    High-density polyurethane with anti-slip surface, UV-resistant pigments, and fire-retardant additives
+                                </p>
+                            </div>
+                            <button class="btn quote-btn" style="background-color: #0056b3; color: #fff; padding: 7px 22px; font-size: 0.98rem; border: none; border-radius: 5px; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.08); width: auto; min-width: 120px; margin-top: 12px;" onclick="openQuoteForm('PU Tactile Tiles')">Get Quote</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 8th Sub category Section -->
+            <section id="ss-railings" style="margin: 0 auto 12px auto !important; padding: 30px 20px !important; scroll-margin-top: 15vh; max-width: 1200px;">
+                <div style="display: flex; align-items: flex-start; gap: 32px; flex-wrap: wrap; justify-content: space-between;">
+                    <div style="flex: 1 1 340px; min-width: 220px; max-width: 700px;">
+                        <h2 style="margin: 0 0 8px 0 !important; color: #0056b3; font-size: 20px !important; text-align: left; padding: 0 0 0 10px !important; border-left: 4px solid #0056b3; line-height: 1.2 !important;"><strong>SS Railings</strong></h2>
+                        <a href="#ss-railings" style="color: #0056b3; font-size: 1.08rem; text-decoration: underline; font-weight: 500;">SS Railings</a>
+                        <p style="margin: 10px 0 0 0; color: #333; font-size: 1rem; line-height: 1.5;">
+                            Our Stainless Steel (SS) Railings are designed to provide safe and secure support while maintaining an elegant appearance. These railings are essential accessibility features for stairs, ramps, and elevated walkways, offering stability and guidance for all users, including those with mobility challenges. The smooth, corrosion-resistant stainless steel surface is easy to grip and maintain, making it ideal for both indoor and outdoor applications. We offer various designs that combine functionality with aesthetic appeal, from simple, clean lines to more elaborate patterns. All our SS Railings are installed at the proper height and include tactile indicators where needed to comply with accessibility standards.
+                        </p>
+                        <div style="margin: 15px 0; padding: 12px 15px; background-color: #f8f9fa; border-left: 4px solid #ff8c42; border-radius: 4px;">
+                            <strong style="display: block; margin-bottom: 5px; color: #333; font-size: 0.95rem;">Materials Used:</strong>
+                            <p style="margin: 0; color: #555; font-size: 0.9rem; line-height: 1.5;">
+                                304 or 316 grade stainless steel with brushed or polished finish, tempered glass panels, and non-slip handrails
+                            </p>
+                        </div>
+                        <button class="btn quote-btn" style="background-color: #0056b3; color: #fff; padding: 7px 22px; font-size: 0.98rem; border: none; border-radius: 5px; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.08); width: auto; min-width: 120px; margin-top: 12px;" onclick="openQuoteForm('SS Railings')">Get Quote</button>
+                    </div>
+                    <div style="flex: 0 0 400px; display: flex; justify-content: flex-end; align-items: flex-start; min-width: 300px; max-width: 440px;">
+                        <img src="images/Cat/Acces7.png" alt="SS Railings" style="width: 100%; max-width: 400px; height: auto; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); background: #f8f9fa;" loading="lazy">
+                    </div>
+                </div>
+            </section>
+            <div style="width: 100%; overflow: hidden;">
+                <footer style="background-color: #000000; text-align: center; padding: 12px 0; margin-top: 30px; width: 100%;">
+                    <div class="footer-bottom" style="padding: 6px 0; max-width: 1200px; margin: 0 auto;">
+                        <p style="color: #fff; margin: 0; font-size: 0.9rem;">&copy; 2024 SafeZone. All rights reserved.</p>
+                    </div>
+                </footer>
+            </div>
+
+            <!-- Include Quote Form -->
+            <div id="quoteModal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6);">
+                <div class="modal-content" style="background-color: #fefefe; margin: 10% auto; padding: 25px; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.3); max-width: 500px; width: 90%; position: relative;">
+                    <span class="close" onclick="closeQuoteModal()" style="position: absolute; right: 20px; top: 10px; font-size: 28px; font-weight: bold; color: #777; cursor: pointer;">&times;</span>
+                    
+                    <h2 style="color: #0056b3; margin-top: 0; margin-bottom: 20px; font-size: 1.5rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">Customer Enquiry Form</h2>
+                    
+                    <form id="quoteForm" onsubmit="return submitQuoteForm(event)" style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required 
+                                   style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;"
+                                   placeholder="Your name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" id="mobile" name="mobile" required 
+                                   style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;"
+                                   placeholder="Your mobile number" pattern="[0-9]{10}" title="Please enter a 10-digit mobile number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" id="productName" name="product" readonly 
+                                   style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; background-color: #f5f5f5;"
+                                   placeholder="Product name will be auto-filled">
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="4" required 
+                                     style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; resize: vertical; min-height: 100px;"
+                                     placeholder="Your message or additional details"></textarea>
+                        </div>
+                        
+                        <div style="display: flex; gap: 10px; margin-top: 10px;">
+                            <button type="submit" style="background-color: #0056b3; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: 600; flex: 1;">
+                                Send Enquiry
+                            </button>
+                            <button type="button" onclick="closeQuoteModal()" style="background-color: #f0f0f0; color: #333; border: 1px solid #ddd; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: 500; flex: 1;">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Include Quote Form JavaScript -->
+            <script>
+                // Function to open the quote form modal
+                function openQuoteForm(productName) {
+                    const modal = document.getElementById('quoteModal');
+                    const productInput = document.getElementById('productName');
+                    
+                    // Set the product name in the form
+                    if (productInput) {
+                        productInput.value = productName || '';
+                    }
+                    
+                    // Show the modal
+                    if (modal) {
+                        modal.style.display = 'block';
+                        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+                    }
+                }
+
+                // Function to close the quote form modal
+                function closeQuoteModal() {
+                    const modal = document.getElementById('quoteModal');
+                    if (modal) {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto'; // Re-enable scrolling
+                    }
+                }
+
+                // Function to handle form submission
+                function submitQuoteForm(event) {
+                    event.preventDefault();
+                    
+                    // Get form data
+                    const form = event.target;
+                    const formData = new FormData(form);
+                    const submitButton = form.querySelector('button[type="submit"]');
+                    const originalButtonText = submitButton.textContent;
+                    
+                    // Show loading state
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Sending...';
+                    
+                    // Send form data using FormSubmit.co
+                    fetch('https://formsubmit.co/ajax/el/gamuso', {
+                        method: 'POST',
+                        headers: { 
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            name: formData.get('name'),
+                            mobile: formData.get('mobile'),
+                            product: formData.get('product'),
+                            message: formData.get('message'),
+                            _subject: 'New Quote Request from ' + formData.get('name'),
+                            _template: 'table',
+                            _autoresponse: 'Thank you for your inquiry. We have received your message and will get back to you shortly.'
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Show success message
+                        showThankYouMessage();
+                        // Reset form
+                        form.reset();
+                        // Close modal after delay
+                        setTimeout(closeQuoteModal, 2000);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('There was an error submitting your request. Please try again later.');
+                    })
+                    .finally(() => {
+                        // Reset button state
+                        submitButton.disabled = false;
+                        submitButton.textContent = originalButtonText;
+                    });
+                    
+                    return false;
+                }
+
+                // Function to show thank you message
+                function showThankYouMessage() {
+                    const thankYouMessage = document.createElement('div');
+                    thankYouMessage.id = 'thankYouMessage';
+                    thankYouMessage.style.position = 'fixed';
+                    thankYouMessage.style.top = '50%';
+                    thankYouMessage.style.left = '50%';
+                    thankYouMessage.style.transform = 'translate(-50%, -50%)';
+                    thankYouMessage.style.backgroundColor = 'white';
+                    thankYouMessage.style.padding = '20px 40px';
+                    thankYouMessage.style.borderRadius = '8px';
+                    thankYouMessage.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+                    thankYouMessage.style.zIndex = '1001';
+                    thankYouMessage.style.textAlign = 'center';
+                    thankYouMessage.style.fontSize = '1.1rem';
+                    thankYouMessage.style.color = '#0056b3';
+                    thankYouMessage.style.fontWeight = '500';
+                    thankYouMessage.textContent = 'Thank you for submitting your query — we'll get back to you shortly.';
+                    
+                    document.body.appendChild(thankYouMessage);
+                    
+                    // Remove message after 3 seconds
+                    setTimeout(() => {
+                        thankYouMessage.style.transition = 'opacity 0.5s';
+                        thankYouMessage.style.opacity = '0';
+                        setTimeout(() => {
+                            document.body.removeChild(thankYouMessage);
+                        }, 500);
+                    }, 3000);
+                }
+
+                // Close modal when clicking outside of it
+                window.onclick = function(event) {
+                    const modal = document.getElementById('quoteModal');
+                    if (event.target === modal) {
+                        closeQuoteModal();
+                    }
+                }
+
+                // Close modal with Escape key
+                document.addEventListener('keydown', function(event) {
+                    const modal = document.getElementById('quoteModal');
+                    if (event.key === 'Escape' && modal && modal.style.display === 'block') {
+                        closeQuoteModal();
+                    }
+                });
+            </script>

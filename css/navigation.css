@@ -1,0 +1,141 @@
+/* Navigation Styles */
+.product-nav {
+    background-color: #0d47a1;
+    padding: 0.5em 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+}
+
+.product-nav .container {
+    position: relative;
+}
+
+.product-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.product-nav > .container > ul > li {
+    position: relative;
+    flex: 1;
+    text-align: center;
+}
+
+.product-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8em 0.5em;
+    display: block;
+    font-weight: 500;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease;
+}
+
+.product-nav a:hover,
+.product-nav li.active > a {
+    background-color: #1565c0;
+}
+
+/* Dropdown Menu */
+.dropdown-menu.vertical-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 220px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+    padding: 0.5em 0;
+    margin: 0;
+    list-style: none;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Custom scrollbar for dropdown */
+.dropdown-menu.vertical-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-menu.vertical-menu::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.dropdown-menu.vertical-menu::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.dropdown-menu.vertical-menu::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.dropdown-menu.vertical-menu li {
+    position: relative;
+}
+
+.dropdown-menu.vertical-menu a {
+    color: #333;
+    padding: 0.6em 1em;
+    text-align: left;
+    white-space: normal;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.dropdown-menu.vertical-menu a:hover {
+    background-color: #f5f5f5;
+    color: #1976d2;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .product-nav > .container > ul > li {
+        flex: 1 0 25%;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-nav > .container > ul > li {
+        flex: 1 0 50%;
+    }
+    
+    .dropdown-menu.vertical-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background-color: #1565c0;
+    }
+    
+    .dropdown-menu.vertical-menu.show {
+        max-height: 400px;
+    }
+    
+    .dropdown-menu.vertical-menu a {
+        color: #fff;
+        padding-left: 2em;
+    }
+    
+    .dropdown-menu.vertical-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-nav > .container > ul > li {
+        flex: 1 0 100%;
+    }
+}

@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Zone - Road Safety and Braille Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/whatsapp-button.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/new-services.css">
+    <style>
+        .two-card-braille-section {
+            margin: 0;
+            background: none;
+            padding: 0;
+        }
+        .two-card-braille-container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 24px;
+            justify-content: center;
+            background: none;
+            min-height: 0;
+            padding: 0.5em 0;
+        }
+        .braille-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 1px 6px #1976d211;
+            padding: 1.1em 1.1em 1.1em 1.1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 510px;
+            max-width: 620px;
+            flex: 1 1 575px;
+        }
+        .braille-card-left {
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .braille-card-right {
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .braille-card-title {
+            font-size: 1.15rem;
+            color: #1976d2;
+            margin-bottom: 0.7em;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-align: left;
+        }
+        .braille-card-desc {
+            font-size: 0.98rem;
+            color: #333;
+            margin-bottom: 0.7em;
+            line-height: 1.5;
+            text-align: left;
+        }
+        .braille-card-img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            max-height: 260px;
+            object-fit: contain;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 1px 6px #1976d222;
+            background: #e3e3e3;
+            margin-bottom: 0.2em;
+        }
+        .braille-card-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1em 0;
+        }
+        .braille-card-list li {
+            font-size: 0.98rem;
+            color: #444;
+            margin-bottom: 0.5em;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+        .braille-card-list li i {
+            color: #1976d2;
+            font-size: 1em;
+        }
+        .braille-card-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #ff9800 60%, #ffb74d 100%);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.7em 1.5em;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 1px 6px #ff980033;
+            text-decoration: none;
+            margin-top: 0.5em;
+            letter-spacing: 0.5px;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+            white-space: nowrap;
+        }
+        .braille-card-btn:hover {
+            background: linear-gradient(90deg, #ff9800 80%, #ffb74d 100%);
+            box-shadow: 0 2px 12px #ff980055;
+            transform: translateY(-2px) scale(1.03);
+        }
+        @media (max-width: 900px) {
+            .two-card-braille-container {
+                flex-direction: column;
+                gap: 1.2em;
+                align-items: center;
+            }
+            .braille-card {
+                width: 95vw;
+                max-width: 320px;
+            }
+        }
+        @media (max-width: 600px) {
+            .braille-card-title {
+                font-size: 1rem;
+            }
+            .braille-card-list li {
+                font-size: 0.93rem;
+            }
+            .braille-card-btn {
+                font-size: 0.98rem;
+                padding: 0.6em 1.2em;
+            }
+        }
+        /* Old styles for reference, can be removed later */
+        .braille-info-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 2em;
+        }
+        .braille-info-btn-wrapper {
+            min-width: 180px;
+        }
+        .tall-center-btn {
+            width: 100%;
+            /* Height will be set dynamically to match image */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            background: orange;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 1px 6px #0001;
+            text-align: center;
+            transition: background 0.2s;
+        }
+        .tall-center-btn:hover {
+            background: #ff9800;
+        }
+        .client-logos .section-title {
+            margin-bottom: 0.1em;
+            text-align: center;
+        }
+        .client-logos .section-subtitle {
+            margin-top: 0.2em;
+            margin-bottom: 3.5em;
+            text-align: center;
+        }
+        .services-grid {
+            gap: 8px;
+        }
+        .service-card {
+            border-radius: 10px !important;
+            box-shadow: 0 1px 6px #0001 !important;
+            min-width: 140px;
+            max-width: 180px;
+            margin: 0 auto;
+        }
+        .service-card-inner {
+            padding: 4px 6px 4px 6px;
+        }
+        .service-icon {
+            width: 44px;
+            height: 44px;
+            margin-bottom: 4px;
+        }
+        .service-icon i {
+            font-size: 1.3rem;
+        }
+        .service-card h3 {
+            font-size: 1rem;
+            margin: 0 0 2px;
+            padding-bottom: 2px;
+        }
+        .service-card p {
+            line-height: 1.3;
+            margin: 0 0 6px;
+            font-size: 0.78rem;
+        }
+        .service-btn {
+            padding: 6px 14px;
+            font-size: 0.78rem;
+        }
+        /* Testimonial Section Improvements */
+        .testimonial {
+            background: #f7fafd;
+            padding: 50px 0 60px 0;
+        }
+        .testimonial .section-title {
+            text-align: center;
+            color: #1976d2;
+            font-size: 2rem;
+            margin-bottom: 0.1em;
+        }
+        .testimonial .section-subtitle {
+            text-align: center;
+            color: #555;
+            margin-top: 0.2em;
+            margin-bottom: 5em;
+        }
+        .testimonial-slider {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            /* overflow: hidden; */
+            overflow: visible;
+        }
+        .testimonial-grid {
+            display: flex;
+            flex-direction: row;
+            gap: 32px;
+            transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+            will-change: transform;
+            overflow: visible;
+        }
+        .testimonial-item {
+            min-width: 320px;
+            max-width: 340px;
+            flex: 0 0 320px;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 2px 16px #0001;
+            padding: 56px 20px 24px 20px;
+            text-align: center;
+            transition: box-shadow 0.2s, transform 0.2s;
+            position: relative;
+            overflow: visible;
+        }
+        .testimonial-item img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #1976d2;
+            box-shadow: 0 2px 8px #1976d233;
+            background: #e3e3e3;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+        .testimonial-item:hover {
+            box-shadow: 0 6px 32px #1976d233;
+            transform: translateY(-4px) scale(1.02);
+        }
+        .testimonial-slider .prev-btn,
+        .testimonial-slider .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+        .testimonial-slider .prev-btn {
+            left: -90px;
+        }
+        .testimonial-slider .next-btn {
+            right: -90px;
+        }
+        @media (max-width: 900px) {
+            .testimonial-slider .prev-btn {
+                left: -18px;
+            }
+            .testimonial-slider .next-btn {
+                right: -18px;
+            }
+        }
+        @media (max-width: 700px) {
+            .testimonial-slider .prev-btn,
+            .testimonial-slider .next-btn {
+                left: 8px !important;
+                right: 8px !important;
+                top: auto;
+                bottom: -48px;
+                transform: none;
+            }
+            .testimonial-slider .next-btn {
+                left: auto !important;
+                right: 8px !important;
+            }
+        }
+        @media (max-width: 700px) {
+            .testimonial-grid {
+                gap: 16px;
+            }
+            .testimonial-item {
+                min-width: 90vw;
+                max-width: 95vw;
+                flex: 0 0 90vw;
+            }
+        }
+        .testimonial-item img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #1976d2;
+            box-shadow: 0 2px 8px #1976d233;
+            margin-bottom: 18px;
+            background: #e3e3e3;
+        }
+        .testimonial-item p {
+            font-size: 1.05rem;
+            color: #333;
+            margin-bottom: 12px;
+            min-height: 60px;
+        }
+        .testimonial-item span {
+            color: #1976d2;
+            font-weight: 500;
+            font-size: 0.98rem;
+        }
+        .testimonial-slider .prev-btn,
+        .testimonial-slider .next-btn {
+            background: #1976d2;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            font-size: 1.2rem;
+            margin: 18px 8px 0 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .testimonial-slider .prev-btn:hover,
+        .testimonial-slider .next-btn:hover {
+            background: #125ea7;
+        }
+        @media (max-width: 700px) {
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+            .testimonial {
+                padding: 30px 0 30px 0;
+            }
+        }
+    </style>
+    <style>
+        .dropdown-menu.vertical-menu {
+            display: none;
+            position: absolute;
+            left: 0;
+            width: 300px;
+            max-width: 95vw;
+            height: auto;
+            max-height: 300px;
+            padding: 8px 0;
+            list-style: none;
+            text-align: left;
+            margin-top: 8px;
+            overflow-y: auto;
+            overflow-x: visible;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            scrollbar-width: thin;
+            scrollbar-color: #b3c6e0 #f4f7fa91;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .dropdown-menu.vertical-menu::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        .dropdown-menu.vertical-menu::-webkit-scrollbar-track {
+            background: #f4f7fa91;
+            border-radius: 10px;
+            margin: 8px 0;
+        }
+        
+        .dropdown-menu.vertical-menu::-webkit-scrollbar-thumb {
+            background-color: #b3c6e0;
+            border-radius: 10px;
+            border: 2px solid #f4f7fa91;
+            background-clip: padding-box;
+        }
+        
+        .dropdown-menu.vertical-menu::-webkit-scrollbar-thumb:hover {
+            background-color: #8fa8d1;
+        }
+        
+        .dropdown-menu.vertical-menu li {
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            transition: background 0.2s;
+        }
+        
+        .dropdown-menu.vertical-menu li a {
+            width: calc(100% - 20px);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            min-height: 40px;
+            max-height: none;
+            padding: 8px 14px;
+            box-sizing: border-box;
+            font-size: 0.8rem;
+            color: #2c2c2c;
+            text-decoration: none;
+            text-align: left;
+            line-height: 1.4;
+            transition: all 0.18s ease;
+            position: relative;
+            background: rgba(255, 248, 240, 0.95);
+            margin: 2px 10px;
+            border-radius: 4px;
+            border-left: 3px solid #ff8c42;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+            white-space: normal;
+            word-break: break-word;
+        }
+        
+        .dropdown-menu.vertical-menu li a:hover {
+            color: #d35400;
+            font-weight: 500;
+            padding-left: 16px;
+            background: rgba(255, 228, 196, 0.95);
+            border-left-color: #ff6b1a;
+            transform: translateX(2px);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        
+        .dropdown-menu.vertical-menu li a::before {
+            content: "→";
+            color: #0056b3;
+            font-size: 0.7em;
+            margin-right: 6px;
+            opacity: 0.7;
+            transition: all 0.18s;
+        }
+        
+        .dropdown-menu.vertical-menu li a:hover::before {
+            color: #fff;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown:hover .dropdown-menu.vertical-menu {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .dropdown-menu.vertical-menu {
+                min-width: 160px !important;
+                width: 98vw;
+                max-width: 300px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body id="page-body">
+
+    <header>
+        <div class="container header-container">
+            <div class="logo-area">
+                                <a href="index.html"><img src="images/Logo Safe zone.jpg" alt="Safe Zone Logo" class="main-logo"></a>
+                            <div class="logo-bg-wrapper"><img src="images/40 YEAR LOGO.png" alt="40 Years of Excellence" class="secondary-logo"></div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <nav class="product-nav">
+        <div class="container">
+            <ul>
+                <li class="dropdown">
+                    <a href="braille.html">Braille <span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu vertical-menu">
+                        <li><a href="braille.html#braille-signages">1. Braille Signages</a></li>
+                        <li><a href="braille.html#braille-handrail">2. Braille Handrail Signs</a></li>
+                        <li><a href="braille.html#pu-tactile-tiles">3. PU Tactile Tiles, Studs & Directional Strips</a></li>
+                        <li><a href="braille.html#wc-alarm-system">4. Differently-Abled W/C Alarm System</a></li>
+                        <li><a href="braille.html#braille-layout-plan">5. Braille Tactile Layout Plan</a></li>
+                    </ul>
+                    <li class="dropdown">
+                        <a href="road-signs.html">Road Signs &#9662;</a>
+                        <ul class="dropdown-menu vertical-menu">
+                            <li><a href="#">Highway / Road Signs</a></li>
+                            <li><a href="#">Retro-Reflective Road Signs</a></li>
+                            <li><a href="#">Cautionary Signs</a></li>
+                            <li><a href="#">Mandatory Signs</a></li>
+                            <li><a href="#">Informatory Signs</a></li>
+                            <li><a href="#">Railway Signs</a></li>
+                            <li><a href="#">Airport Signs</a></li>
+                            <li><a href="#">Photoluminescent Signs</a></li>
+                            <li><a href="#">Exit / Emergency Light Signs</a></li>
+                        </ul>    
+                    </li>
+                <li class="dropdown">
+                    <a href="fire-sign.html">Fire Sign <span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu vertical-menu">
+                        <li><a href="fire-sign.html#fire-exit">Fire Signs</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="road-safety.html">Road Safety &#9662;</a>
+                    <ul class="dropdown-menu vertical-menu">
+                        <li><a href="#traffic-cone">Traffic Cone</a></li>
+                        <li><a href="#traffic-barricades">Traffic Barricades / Expandable Barriers</a></li>
+                        <li><a href="#speed-bumps">Speed Bumps & Rumblers</a></li>
+                        <li><a href="#delineators">Delineators</a></li>
+                        <li><a href="#blinkers">Blinkers / Road Lamps</a></li>
+                        <li><a href="#cat-eyes">Cat Eyes / Pavement Markers / Road Studs</a></li>
+                        <li><a href="#solar-studs">Solar Studs / Solar Delineators</a></li>
+                        <li><a href="#spring-post">Spring Post</a></li>
+                        <li><a href="#centre-verge">Centre Verge</a></li>
+                        <li><a href="#lds">Linear Delineation System (LDS)</a></li>
+                        <li><a href="#afp-tape">Aluminium Backed Flexible Prismatic Tape (AFP)</a></li>
+                        <li><a href="#reflectors">Reflectors / Conspicuity Tapes</a></li>
+                        <li><a href="#caution-tape">Caution Tape</a></li>
+                        <li><a href="#median-markers">Median Markers</a></li>
+                        <li><a href="#car-stopper">Car Stopper / Parking Lot Solutions / Rubber Wall Protector</a></li>
+                        <li><a href="#guard-rail">Guard Rail / W-Beam Crash Barrier & GR Reflector</a></li>
+                        <li><a href="#anti-glare">Anti-Glare</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="accessibility.html">Accessibility <span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu vertical-menu">
+                        <li><a href="accessibility.html#layout-plans">Layout Plans</a></li>
+                        <li><a href="accessibility.html#tactile-map">Tactile Map</a></li>
+                        <li><a href="accessibility.html#tactile-warning">Tactile Warning / Hazard Alert Tiles</a></li>
+                        <li><a href="accessibility.html#tactile-guiding">Tactile Guiding / Directional Tiles</a></li>
+                        <li><a href="accessibility.html#tactile-pavement">Tactile Pavement Indicators</a></li>
+                        <li><a href="accessibility.html#tactile-pavement-blocks">Tactile Pavement Blocks</a></li>
+                        <li><a href="accessibility.html#tactile-flooring">Tactile Flooring</a></li>
+                        <li><a href="accessibility.html#tactile-warning-2">Tactile Warning Floor Indicators</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="vehicle-graphics.html">Vehicle Graphics <span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu vertical-menu">
+                        <li><a href="vehicle-graphics.html#reflective-vehicle-tapes">Reflective Vehicle Tapes</a></li>
+                        <li><a href="vehicle-graphics.html#vehicle-branding">Vehicle Graphics</a></li>
+                        <li><a href="vehicle-graphics.html#number-plates">Revolving Lights Siren & Strobe Lights</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="security-equipments.html">Security Equipments <span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu vertical-menu">
+                        <li><a href="security-equipments.html#handheld-detectors">Handheld Metal Detectors</a></li>
+                        <li><a href="security-equipments.html#door-frame-detectors">Door Frame Metal Detectors</a></li>
+                        <li><a href="security-equipments.html#xray-baggage-scanners">Traffic Convex Mirror</a></li>
+                        <li><a href="security-equipments.html#under-vehicle-scanners">Search Ligh LED/Halogen</a></li>
+                        <li><a href="security-equipments.html#cctv-cameras">Automatic Traffic Boom Barrier</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="indoor-sign.html">Indoor Sign <span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu vertical-menu">
+                        <li><a href="indoor-sign.html#floor-directions">Floor Directions</a></li>
+                        <li><a href="indoor-sign.html#hospital-signs">Hospital Signs</a></li>
+                        <li><a href="indoor-sign.html#office-signs">Inauguration Signs</a></li>
+                        <li><a href="indoor-sign.html#restroom-signs">Safety Signs</a></li>
+                        <li><a href="indoor-sign.html#staircase-signs">Q-Managers & Clasic Posts with Velvet Ropes</a></li>
+                        <li><a href="indoor-sign.html#staircase-signs">Name Plates</a></li>
+                        <li><a href="indoor-sign.html#elevator-signs">Floor Directory/Informatory Board</a></li>
+                    </ul>
+                </li>
+                <li><a href="PDF/Anand Sales India Catalog.pdf" target="_blank" class="download-button">Download <span class="arrow">&darr;</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero" style="position: relative; height: 60vh; min-height: 300px; overflow: hidden;">
+            <img src="images/Header.png" alt="Safe Zone Header" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+            <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.747); z-index: 2;"></div>
+            <div class="container hero-content" style="position: relative; height: 100%; display: flex; align-items: center; z-index: 3;">
+                <div class="hero-text-content" style="max-width: 800px; margin: 0 auto; text-align: center; padding: 0 20px;">
+                    <h1 style="color: white; text-transform: uppercase; font-size: 3.5rem; margin: 0 0 10px 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); line-height: 1.2;">Think hard about <br><span style="color: #ff9800; font-weight: 800; font-size: 4.5rem; display: inline-block; margin-top: 15px;">Safety</span></h1>
+                    <div class="chevrons" style="margin-top: 30px;">
+                        <span style="font-size: 2rem; letter-spacing: -5px;">&gt;&gt;&gt;&gt;&gt;&gt;</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <section class="features-banner">
+            <div class="container">
+                <div class="feature-item">
+                    <i class="fas fa-thumbs-up"></i>
+                    <div>
+                        <strong>Trusted by</strong>
+                        <span>40,000+ Customers</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>3M Authorized</strong>
+                        <span>Reflective Films</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-award"></i>
+                    <div>
+                        <strong>MUTCD-Compliant</strong>
+                        <span>Designs</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <img src="images/Make in India.jpeg" alt="Make in India" class="flag-icon">
+                    <div>
+                        <strong>Make in India</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- Service Categories -->
+        <section class="service-categories" style="margin-bottom: 0.5em;">
+            <div class="services-container" style="padding-bottom: 0; margin-bottom: 0;">
+                <h2 style="margin-top: 0.5em; margin-bottom: 0.5em;">We specialize in</h2>
+                <div class="services-grid" style="margin-bottom: 0;">
+                    <!-- Braille Card -->
+                    <div class="service-card" style="--card-color: #4CAF50; --card-color-rgb: 76, 175, 80;">
+                        <div class="service-card-inner">
+                            <div class="service-icon">
+                                <i class="fas fa-braille"></i>
+                            </div>
+                            <h3>Braille</h3>
+                            <p>High-quality Braille signs and tactile indicators for accessibility.</p>
+                            <a href="braille.html" class="service-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Road Signs Card -->
+                    <div class="service-card" style="--card-color: #2196F3; --card-color-rgb: 33, 150, 243;">
+                        <div class="service-card-inner">
+                            <div class="service-icon">
+                                <i class="fas fa-traffic-light"></i>
+                            </div>
+                            <h3>Road Signs</h3>
+                            <p>Durable and compliant road signage solutions for all needs.</p>
+                            <a href="road-signs.html" class="service-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Fire Sign Card -->
+                    <div class="service-card" style="--card-color: #FF9800; --card-color-rgb: 255, 152, 0;">
+                        <div class="service-card-inner">
+                            <div class="service-icon">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <h3>Fire Sign</h3>
+                            <p>Essential fire safety signs and equipment for all types of buildings.</p>
+                            <a href="fire-sign.html" class="service-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Road Safety Card -->
+                    <div class="service-card" style="--card-color: #F44336; --card-color-rgb: 244, 67, 54;">
+                        <div class="service-card-inner">
+                            <div class="service-icon">
+                                <i class="fas fa-car-crash"></i>
+                            </div>
+                            <h3>Road Safety</h3>
+                            <p>Comprehensive road safety equipment and solutions.</p>
+                            <a href="road-safety.html" class="service-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Accessibility Card -->
+                    <div class="service-card" style="--card-color: #9C27B0; --card-color-rgb: 156, 39, 176;">
+                        <div class="service-card-inner">
+                            <div class="service-icon">
+                                <i class="fas fa-universal-access"></i>
+                            </div>
+                            <h3>Accessibility</h3>
+                            <p>Creating accessible environments with specialized solutions.</p>
+                            <a href="accessibility.html" class="service-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Graphics Card -->
+                    <div class="service-card" style="--card-color: #673AB7; --card-color-rgb: 103, 58, 183;">
+                        <div class="service-card-inner">
+                            <div class="service-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h3>Vehicle Graphics</h3>
+                            <p>Eye-catching vehicle wraps and graphics for your fleet.</p>
+                            <a href="vehicle-graphics.html" class="service-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Security Equipments Card -->
+                    <div class="service-card" style="--card-color: #FF5722; --card-color-rgb: 255, 87, 34;">
+                        <div class="service-card-inner">
+                            <div class="service-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Security Equipments</h3>
+                            <p>Comprehensive security solutions for all safety needs.</p>
+                            <a href="security-equipments.html" class="service-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Indoor Sign Card -->
+                    <div class="service-card" style="--card-color: #00BCD4; --card-color-rgb: 0, 188, 212;">
+                        <div class="service-card-inner">
+                            <div class="service-icon">
+                                <i class="fas fa-map-signs"></i>
+                            </div>
+                            <h3>Indoor Sign</h3>
+                            <p>Professional indoor signs for offices, hospitals, and public spaces.</p>
+                            <a href="indoor-sign.html" class="service-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Client Logos Section -->
+        <section class="client-logos">
+            <div class="container">
+                <h2 class="section-title">Proud to Serve These Customers</h2>
+                <p class="section-subtitle">Anand Sales has been trusted for over four decades, offering expert solutions to clients across government, private, local, national, and international clients.</p>
+                <div class="logo-grid">
+                    <img src="images/New folder/232-2327850_punjab-police-punjab-police-india-logo.png" alt="Punjab Police Logo">
+                    <img src="images/New folder/47b6dd5beb57780323d99b5c8e382c10.jpg" alt="Partner Logo 2">
+                    <img src="images/New folder/536-5365113_haryana-govt-logo-png.png" alt="Haryana Govt Logo">
+                    <img src="images/New folder/ANI-20240126123452.jpg" alt="Partner Logo 4">
+                    <img src="images/New folder/delhi-polish-logo-png_seeklogo-183125.png" alt="Delhi Police Logo">
+                    <img src="images/New folder/Government_of_India_logo.svg.png" alt="Government of India Logo">
+                    <img src="images/New folder/images (1).png" alt="Partner Logo 7">
+                    <img src="images/New folder/images.png" alt="Partner Logo 8">
+                    <img src="images/New folder/jharkhand-police-logo-png_seeklogo-448474.png" alt="Jharkhand Police Logo">
+                    <img src="images/New folder/NHAI-1590586303-1024x1024.jpg" alt="NHAI Logo">
+                    <img src="images/New folder/uttar-pradesh-police-logo-png_seeklogo-611635.png" alt="Uttar Pradesh Police Logo">
+                </div>
+            </div>
+        </section>
+
+        
+      
+            
+            </main>
+
+   <!-- Footer -->
+   <footer class="site-footer">
+    <div class="container">
+        <div class="footer-about">
+                <img src="images/Logo_Safe_zone-2.png" alt="MSME Logo" style="width: 180px; height: auto;">
+                        <p style="color: #fff;"><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> S.C.O. 73, Sector 31-C, Chandigarh - 160030</p>
+            <p style="color: #fff;"><i class="fas fa-envelope"></i> <strong>Email:</strong>anandsalesindia@gmail.com</p>
+            <p style="color: #fff;"><i class="fas fa-certificate"></i> ISO 9001:2015</p>
+            <div class="footer-logos">
+                <img src="images/MSME logo.png" alt="MSME Logo">
+                <img src="images/Make in India.jpeg" alt="Make in India Logo">
+                <i class="fas fa-certificate"></i>
+            </div>
+        </div>
+        <div class="footer-categories">
+            <h4 style="color: #ff9800;"><i class="fas fa-tags"></i> Categories</h4>
+            <ul>
+                <li><a href="#"><i class="fas fa-braille"></i> Braille</a></li>
+                <li><a href="#"><i class="fas fa-road"></i> Road Signs</a></li>
+                <li><a href="#"><i class="fas fa-fire"></i> Fire Sign</a></li>
+                <li><a href="#"><i class="fas fa-traffic-light"></i> Road Safety</a></li>
+                <li><a href="#"><i class="fas fa-wheelchair"></i> Accessibility</a></li>
+                <li><a href="#"><i class="fas fa-car"></i> Vehicle Graphics</a></li>
+                <li><a href="#"><i class="fas fa-shield-alt"></i> Security Equipments</a></li>
+                <li><a href="#"><i class="fas fa-sign"></i> Indoor Sign</a></li>
+            </ul>
+        </div>
+        <div class="footer-legal">
+            <h4 style="color: #ff9800;"><i class="fas fa-gavel"></i> Legal</h4>
+            <ul>
+                <li><a href="terms-and-conditions.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+                <li><a href="privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                <li><a href="reviews.html"><i class="fas fa-star"></i> Reviews</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about-us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a href="contact-us.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h3 style="color: #ff9800;">Get in Touch</h3>
+            <p style="color: #fff;"><i class="fas fa-phone"></i> +91-0172-2638510</p>
+            <h4 style="color: #ff9800;">Follow Us</h4>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <form action="#" class="footer-form">
+                <input type="email" name="email" placeholder="Your Email" required>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom" style="padding: 6px 0;">
+        <p style="color: #fff;">&copy; 2024 SafeZone. All rights reserved.</p>
+    </div>
+</footer>
+
+
+
+<script src="script.js"></script>
+<script>
+// Dropdown menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownToggles = document.querySelectorAll('.dropdown > a');
+    
+    // Add click event for mobile
+    dropdownToggles.forEach(toggle => {
+        // Prevent default behavior on mobile to allow dropdown to work
+        toggle.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) { // Mobile view
+                e.preventDefault();
+                const menu = this.nextElementSibling;
+                const isOpen = menu.style.display === 'block';
+                
+                // Close all other dropdowns
+                document.querySelectorAll('.dropdown-menu.vertical-menu').forEach(m => {
+                    if (m !== menu) m.style.display = 'none';
+                });
+                
+                // Toggle current dropdown
+                menu.style.display = isOpen ? 'none' : 'block';
+            }
+        });
+        
+        // Add hover for desktop
+        const parentLi = toggle.parentElement;
+        parentLi.addEventListener('mouseenter', function() {
+            if (window.innerWidth > 768) { // Desktop view
+                const menu = this.querySelector('.dropdown-menu.vertical-menu');
+                if (menu) menu.style.display = 'block';
+            }
+        });
+        
+        parentLi.addEventListener('mouseleave', function() {
+            if (window.innerWidth > 768) { // Desktop view
+                const menu = this.querySelector('.dropdown-menu.vertical-menu');
+                if (menu) menu.style.display = 'none';
+            }
+        });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.matches('.dropdown > a')) {
+            document.querySelectorAll('.dropdown-menu.vertical-menu').forEach(menu => {
+                menu.style.display = 'none';
+            });
+        }
+    });
+    
+    // Close dropdowns when scrolling on mobile
+    window.addEventListener('scroll', function() {
+        if (window.innerWidth <= 768) {
+            document.querySelectorAll('.dropdown-menu.vertical-menu').forEach(menu => {
+                menu.style.display = 'none';
+            });
+        }
+    }, { passive: true });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            // Hide all dropdowns on desktop
+            document.querySelectorAll('.dropdown-menu.vertical-menu').forEach(menu => {
+                menu.style.display = 'none';
+            });
+        }
+    });
+});
+</script>
+<script>
+// Make the button height match the image height
+function matchButtonToImageHeight() {
+    var img = document.querySelector('.braille-info-image img');
+    var btn = document.querySelector('.tall-center-btn');
+    if (img && btn) {
+        btn.style.height = img.offsetHeight + 'px';
+    }
+}
+window.addEventListener('DOMContentLoaded', function() {
+    matchButtonToImageHeight();
+    window.addEventListener('resize', matchButtonToImageHeight);
+    var img = document.querySelector('.braille-info-image img');
+    if (img) {
+        img.addEventListener('load', matchButtonToImageHeight);
+    }
+
+    // Robust Testimonial slider functionality
+    const grid = document.querySelector('.testimonial-grid');
+    const items = document.querySelectorAll('.testimonial-item');
+    const prevBtn = document.querySelector('.testimonial-slider .prev-btn');
+    const nextBtn = document.querySelector('.testimonial-slider .next-btn');
+    if (!grid || !items.length || !prevBtn || !nextBtn) return;
+    let current = 0;
+    function getVisible() {
+        if (window.innerWidth < 700) return 1;
+        const slider = document.querySelector('.testimonial-slider');
+        if (!slider) return 1;
+        return Math.max(1, Math.floor(slider.offsetWidth / 340));
+    }
+    function updateSlider() {
+        const vis = getVisible();
+        const max = Math.max(0, items.length - vis);
+        if (current < 0) current = 0;
+        if (current > max) current = max;
+        const offset = current * (items[0].offsetWidth + parseInt(getComputedStyle(grid).gap) || 32);
+        grid.style.transform = `translateX(-${offset}px)`;
+        // Disable/enable buttons
+        prevBtn.disabled = (current === 0);
+        nextBtn.disabled = (current === max);
+    }
+    prevBtn.addEventListener('click', function() {
+        current--;
+        updateSlider();
+    });
+    nextBtn.addEventListener('click', function() {
+        current++;
+        updateSlider();
+    });
+    window.addEventListener('resize', updateSlider);
+    updateSlider();
+});
+</script>
+</body>

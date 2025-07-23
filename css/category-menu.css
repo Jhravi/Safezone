@@ -1,0 +1,217 @@
+/* Category Menu Styles */
+.product-nav {
+    background: #1976d2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.product-nav .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.product-nav > .container > ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.product-nav > .container > ul > li {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.product-nav > .container > ul > li > a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.product-nav > .container > ul > li > a:hover,
+.product-nav > .container > ul > li > a.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+/* Dropdown Menu */
+.dropdown-arrow {
+    margin-left: 6px;
+    font-size: 0.8em;
+    transition: transform 0.2s ease;
+    display: inline-block;
+    line-height: 1;
+}
+
+.dropdown:hover > a .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 280px;
+    max-width: 95vw;
+    max-height: 400px;
+    padding: 8px 0;
+    list-style: none;
+    text-align: left;
+    margin-top: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: #b3c6e0 #f4f7fa91;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    -webkit-overflow-scrolling: touch;
+}
+
+.dropdown-menu.vertical-menu {
+    left: 0;
+    right: auto;
+    transform: none;
+}
+
+.dropdown-menu li {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    transition: background 0.2s;
+}
+
+.dropdown-menu li a {
+    width: calc(100% - 16px);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 40px;
+    max-height: none;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+    color: #2c2c2c;
+    text-decoration: none;
+    text-align: left;
+    transition: all 0.2s ease;
+    line-height: 1.4;
+    transition: all 0.18s ease;
+    position: relative;
+    background: rgba(255, 248, 240, 0.95);
+    margin: 2px 8px;
+    border-radius: 4px;
+    border-left: 3px solid #ff8c42;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    white-space: normal;
+    word-break: break-word;
+}
+
+.dropdown-menu li a:hover {
+    color: #d35400;
+    font-weight: 500;
+    padding-left: 14px;
+    background: rgba(255, 228, 196, 0.95);
+    border-left-color: #ff6b1a;
+    transform: translateX(2px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.dropdown-menu li:not(:last-child) a {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Custom scrollbar */
+.dropdown-menu::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+    background: #f4f7fa91;
+    border-radius: 10px;
+    margin: 8px 0;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background-color: #b3c6e0;
+    border-radius: 10px;
+    border: 2px solid #f4f7fa91;
+    background-clip: padding-box;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background-color: #8fa8d1;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .product-nav > .container > ul {
+        justify-content: center;
+    }
+    
+    .product-nav > .container > ul > li > a {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-nav {
+        position: relative;
+    }
+    
+    .product-nav > .container > ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .product-nav > .container > ul > li {
+        width: 100%;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: none;
+        box-shadow: none;
+        border-radius: 0;
+        display: none;
+    }
+    
+    .dropdown-menu.show {
+        display: block;
+    }
+    
+    .product-nav > .container > ul > li > a {
+        padding: 12px 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .dropdown-menu li a {
+        padding: 10px 15px 10px 30px;
+        background: rgba(0, 0, 0, 0.03);
+    }
+    
+    .dropdown-menu li a:hover {
+        background: rgba(0, 0, 0, 0.05);
+    }
+}

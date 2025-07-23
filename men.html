@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Collection - Safe Zone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reduced footer padding */
+        .site-footer {
+            padding: 15px 0;
+        }
+        /* Adjust content spacing if needed */
+        .footer-about, 
+        .footer-categories, 
+        .footer-legal, 
+        .footer-social {
+            padding: 5px 15px;
+        }
+        /* Custom back button position */
+        .back-button {
+            top: 60px !important;
+            left: 60px !important;
+        }
+        /* Product card styling */
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 20px;
+        }
+        .product-title {
+            font-size: 1.2rem;
+            margin: 0 0 10px 0;
+            color: #0056b3;
+        }
+        .product-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        .product-price {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: #0056b3;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: #003d82;
+        }
+    </style>
+</head>
+<body class="category-page">
+    <header>
+        <div class="container header-container">
+            <div class="logo-area">
+                <a href="index.html"><img src="images/Logo Safe zone.jpg" alt="Safe Zone Logo" class="main-logo"></a>
+                <img src="images/40 YEAR LOGO.png" alt="40 Years of Excellence" class="secondary-logo">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Fixed Home Button -->
+    <div class="back-button">
+        <a href="index.html" title="Go to Home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+    </div>
+    
+    <nav class="product-nav">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Categories <span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu vertical-menu">
+                        <li><a href="accessibility.html">Accessibility</a></li>
+                        <li><a href="road-signs.html">Road Signs</a></li>
+                        <li><a href="fire-sign.html">Fire Safety</a></li>
+                        <li><a href="road-safety.html">Road Safety</a></li>
+                        <li><a href="security-equipments.html">Security Equipment</a></li>
+                    </ul>
+                </li>
+                <li class="active"><a href="men.html">Men's Collection</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section with Video -->
+        <header class="video-header" style="position: relative; height: 45vh; min-height: 250px; overflow: hidden;">
+            <video autoplay muted loop playsinline style="position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: center center;">
+                <source src="Video/Men-Collection.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4);">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; width: 100%; padding: 0 20px;">
+                    <h1 style="font-size: 2.5rem; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Men's Collection</h1>
+                    <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Discover our premium selection of safety and security products designed specifically for men</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Products Grid Section -->
+        <section style="padding: 40px 20px;">
+            <div class="container" style="max-width: 1200px; margin: 0 auto;">
+                <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">Featured Products</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; margin-top: 30px;">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <img src="images/products/men/security-vest.jpg" alt="High-Visibility Security Vest" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">High-Visibility Security Vest</h3>
+                            <p class="product-description">Premium quality reflective vest for maximum visibility and safety during night shifts and low-light conditions.</p>
+                            <div class="product-price">₹1,299</div>
+                            <a href="#" class="btn-primary">View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <img src="images/products/men/safety-boots.jpg" alt="Steel-Toe Safety Boots" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Steel-Toe Safety Boots</h3>
+                            <p class="product-description">Durable and comfortable safety boots with steel toe cap and slip-resistant sole for maximum protection.</p>
+                            <div class="product-price">₹3,499</div>
+                            <a href="#" class="btn-primary">View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <img src="images/products/men/security-uniform.jpg" alt="Professional Security Uniform" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Professional Security Uniform</h3>
+                            <p class="product-description">Premium quality security uniform set with moisture-wicking fabric for all-day comfort and professional appearance.</p>
+                            <div class="product-price">₹2,199</div>
+                            <a href="#" class="btn-primary">View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <img src="images/products/men/safety-helmet.jpg" alt="Industrial Safety Helmet" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Industrial Safety Helmet</h3>
+                            <p class="product-description">High-impact resistant safety helmet with adjustable headband and ventilation for maximum comfort.</p>
+                            <div class="product-price">₹899</div>
+                            <a href="#" class="btn-primary">View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card">
+                        <img src="images/products/men/security-belt.jpg" alt="Tactical Security Belt" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Tactical Security Belt</h3>
+                            <p class="product-description">Heavy-duty tactical belt with multiple attachment points for security equipment and accessories.</p>
+                            <div class="product-price">₹1,599</div>
+                            <a href="#" class="btn-primary">View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card">
+                        <img src="images/products/men/winter-jacket.jpg" alt="All-Weather Security Jacket" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">All-Weather Security Jacket</h3>
+                            <p class="product-description">Waterproof and windproof security jacket with multiple pockets and reflective strips for all-weather protection.</p>
+                            <div class="product-price">₹3,799</div>
+                            <a href="#" class="btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section style="background-color: #f8f9fa; padding: 50px 20px;">
+            <div class="container" style="max-width: 1200px; margin: 0 auto;">
+                <h2 style="text-align: center; margin-bottom: 40px; color: #2c3e50;">Shop By Category</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+                    <a href="#" style="text-decoration: none; color: inherit;">
+                        <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                            <div style="height: 180px; background: #e9ecef; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-tshirt" style="font-size: 3rem; color: #6c757d;"></i>
+                            </div>
+                            <div style="padding: 20px; text-align: center;">
+                                <h3 style="margin: 0 0 10px 0; color: #0056b3;">Uniforms</h3>
+                                <p style="color: #6c757d; margin: 0;">Professional security uniforms</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" style="text-decoration: none; color: inherit;">
+                        <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                            <div style="height: 180px; background: #e9ecef; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-shoe-prints" style="font-size: 3rem; color: #6c757d;"></i>
+                            </div>
+                            <div style="padding: 20px; text-align: center;">
+                                <h3 style="margin: 0 0 10px 0; color: #0056b3;">Footwear</h3>
+                                <p style="color: #6c757d; margin: 0;">Safety boots and shoes</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" style="text-decoration: none; color: inherit;">
+                        <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                            <div style="height: 180px; background: #e9ecef; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-hard-hat" style="font-size: 3rem; color: #6c757d;"></i>
+                            </div>
+                            <div style="padding: 20px; text-align: center;">
+                                <h3 style="margin: 0 0 10px 0; color: #0056b3;">Head Protection</h3>
+                                <p style="color: #6c757d; margin: 0;">Helmets and caps</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" style="text-decoration: none; color: inherit;">
+                        <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                            <div style="height: 180px; background: #e9ecef; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-hands" style="font-size: 3rem; color: #6c757d;"></i>
+                            </div>
+                            <div style="padding: 20px; text-align: center;">
+                                <h3 style="margin: 0 0 10px 0; color: #0056b3;">Hand Protection</h3>
+                                <p style="color: #6c757d; margin: 0;">Gloves and hand safety</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section style="padding: 60px 20px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+            <div class="container" style="max-width: 1200px; margin: 0 auto;">
+                <h2 style="text-align: center; margin-bottom: 40px; color: #2c3e50;">Why Choose Our Products</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                    <div style="text-align: center; padding: 20px;">
+                        <div style="width: 80px; height: 80px; background: #0056b3; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <i class="fas fa-medal" style="color: white; font-size: 2rem;"></i>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 10px;">Premium Quality</h3>
+                        <p style="color: #6c757d; margin: 0;">Crafted with high-quality materials for durability and comfort.</p>
+                    </div>
+
+                    <div style="text-align: center; padding: 20px;">
+                        <div style="width: 80px; height: 80px; background: #0056b3; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <i class="fas fa-shield-alt" style="color: white; font-size: 2rem;"></i>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 10px;">Safety Certified</h3>
+                        <p style="color: #6c757d; margin: 0;">All products meet international safety standards and regulations.</p>
+                    </div>
+
+                    <div style="text-align: center; padding: 20px;">
+                        <div style="width: 80px; height: 80px; background: #0056b3; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <i class="fas fa-truck" style="color: white; font-size: 2rem;"></i>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 10px;">Fast Delivery</h3>
+                        <p style="color: #6c757d; margin: 0;">Quick and reliable shipping across India.</p>
+                    </div>
+
+                    <div style="text-align: center; padding: 20px;">
+                        <div style="width: 80px; height: 80px; background: #0056b3; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <i class="fas fa-headset" style="color: white; font-size: 2rem;"></i>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 10px;">24/7 Support</h3>
+                        <p style="color: #6c757d; margin: 0;">Dedicated customer support for all your queries.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>About Safe Zone</h3>
+                    <p>Leading provider of safety and security solutions with over 40 years of excellence in the industry.</p>
+                </div>
+                <div class="footer-categories">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="accessibility.html">Accessibility</a></li>
+                        <li><a href="road-signs.html">Road Signs</a></li>
+                        <li><a href="fire-sign.html">Fire Safety</a></li>
+                        <li><a href="road-safety.html">Road Safety</a></li>
+                        <li><a href="security-equipments.html">Security Equipment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-legal">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@safezone.com</p>
+                    <p>Phone: +91 1234567890</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/1234567890"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Safe Zone. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle dropdown menu on click
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                const link = dropdown.querySelector('a');
+                const menu = dropdown.querySelector('.dropdown-menu');
+                
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const isOpen = menu.style.display === 'block';
+                    
+                    // Close all open dropdowns
+                    document.querySelectorAll('.dropdown-menu').forEach(m => {
+                        m.style.display = 'none';
+                    });
+                    
+                    // Toggle current dropdown if it wasn't open
+                    if (!isOpen) {
+                        menu.style.display = 'block';
+                    }
+                });
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown')) {
+                    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                        menu.style.display = 'none';
+                    });
+                }
+            });
+            
+            // Prevent dropdown from closing when clicking inside it
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                menu.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

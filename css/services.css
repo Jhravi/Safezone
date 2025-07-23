@@ -1,0 +1,817 @@
+/* Service Categories - New Styles */
+.service-categories {
+    padding: 5rem 0;
+    background: #f8f9fa;
+}
+
+.services-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.service-categories h2 {
+    text-align: center;
+    font-size: 1.8rem; /* Smaller heading */
+    color: #2c3e50;
+    margin: 0.5rem 0 1.5rem; /* Reduced margins */
+    font-weight: 600; /* Slightly lighter */
+    text-transform: uppercase;
+    letter-spacing: 0.5px; /* Tighter letter spacing */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px; /* Reduced from 25px to 12px (52% reduction) */
+    padding: 0 10px; /* Slightly reduced padding */
+}
+
+.service-card {
+    background: #ffffff;
+    border-radius: 10px; /* More compact border radius */
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+    transition: all 0.2s ease;
+    border: 1px solid #f0f0f0; /* Subtle border */
+    position: relative;
+    height: auto;
+    min-height: 180px; /* Significantly reduced height */
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.service-card-inner {
+    padding: 10px 8px; /* Minimized padding */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    justify-content: space-between;
+    gap: 4px; /* Reduced gap between elements */
+}
+
+.braille-specialization-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+.braille-specialization-image .image-wrapper {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.braille-specialization-image .image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    transition: transform 0.3s ease;
+}
+
+.braille-specialization-image .image-wrapper img:hover {
+    transform: scale(1.02);
+}
+
+.service-icon {
+    width: 50px; /* More compact icon */
+    height: 50px; /* More compact icon */
+    background: linear-gradient(135deg, rgba(var(--card-color-rgb), 0.1), rgba(var(--card-color-rgb), 0.05));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px; /* Minimal bottom margin */
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--card-color), rgba(var(--card-color-rgb), 0.7));
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+}
+
+.service-card:hover .service-icon::before {
+    opacity: 1;
+}
+
+.service-icon i {
+    font-size: 2.2rem; /* Reduced from 2.8rem */
+    color: var(--card-color);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.service-card:hover .service-icon i {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.service-card h3 {
+    color: #2c3e50;
+    font-size: 1rem; /* Smaller heading */
+    margin: 0 0 4px; /* Minimal margins */
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 6px; /* Reduced padding */
+    width: 100%;
+    line-height: 1.2; /* Tighter line height */
+}
+
+.service-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--card-color);
+    transition: all 0.4s ease;
+}
+
+.service-card:hover h3::after {
+    width: 80px;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.3; /* Tighter line height */
+    margin: 0 0 4px; /* Minimal bottom margin */
+    font-size: 0.75rem; /* Smaller font */
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 2.6em; /* Ensure consistent height */
+}
+
+.service-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 12px; /* Minimal padding */
+    background: var(--card-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px; /* Less rounded corners */
+    font-weight: 500;
+    transition: all 0.15s ease;
+    border: 1px solid transparent;
+    font-size: 0.7rem; /* Smaller font */
+    margin-top: 2px; /* Minimal top margin */
+    height: 28px; /* Fixed height */
+    text-transform: uppercase;
+    letter-spacing: 0.3px; /* Reduced from 0.5px */
+    box-shadow: 0 2px 8px rgba(var(--card-color-rgb), 0.2); /* Lighter shadow */
+    margin-top: auto; /* Push to bottom */
+}
+
+.service-btn:hover {
+    background: transparent;
+    color: var(--card-color);
+    border-color: var(--card-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(var(--card-color-rgb), 0.4);
+}
+
+.service-btn i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.service-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 1199px) {
+    .services-grid {
+        gap: 10px; /* Reduced from 20px */
+        padding: 0 8px; /* Reduced padding */
+    }
+    
+    .service-card-inner {
+        padding: 25px 20px;
+    }
+}
+
+/* 3 columns for medium desktops */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+}
+
+/* 2 columns for tablets */
+@media (max-width: 991px) and (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+/* 2 columns for small tablets */
+@media (max-width: 767px) and (min-width: 576px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 10px;
+        gap: 8px; /* Reduced from 15px */
+    }
+    
+    .service-card-inner {
+        padding: 20px 15px;
+    }
+    
+    .service-icon {
+        width: 75px;
+        height: 75px;
+        margin-bottom: 20px;
+    }
+    
+    .service-icon i {
+        font-size: 2.2rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+    
+    .service-card p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    
+    .service-btn {
+        padding: 10px 22px;
+        font-size: 0.9rem;
+    }
+}
+
+/* 1 column for mobile */
+@media (max-width: 575px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin: 0 auto;
+        padding: 0 15px;
+        gap: 12px; /* Reduced from 25px */
+    }
+    
+    .service-categories h2 {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .service-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+/* Braille Section Styles */
+.braille-section {
+    padding: 5rem 0;
+    background-color: #f9f9f9;
+}
+
+.braille-content {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.braille-text {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.braille-text h2 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.braille-text p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.braille-features {
+    margin: 2rem 0;
+}
+
+.feature {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.feature i {
+    color: #4CAF50;
+    margin-right: 1rem;
+    margin-top: 0.2rem;
+    font-size: 1.2rem;
+}
+
+.feature span {
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 1rem;
+    border: 2px solid #4CAF50;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: #4CAF50;
+}
+
+.braille-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.braille-image:hover {
+    transform: translateY(-5px);
+}
+
+.braille-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.braille-image:hover img {
+    transform: scale(1.03);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .braille-content {
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
+    
+    .braille-text {
+        padding-right: 0;
+        text-align: center;
+    }
+    
+    .braille-features {
+        max-width: 500px;
+        margin: 2rem auto;
+    }
+    
+    .feature {
+        justify-content: center;
+    }
+    
+    .braille-image {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .braille-section {
+        padding: 3rem 0;
+    }
+    
+    .braille-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .braille-text p {
+        font-size: 1rem;
+    }
+    
+    .braille-image {
+        max-width: 100%;
+    }
+    
+    .cta-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Braille Specializations Section */
+.specializations {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+}
+
+.braille-specialization-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.braille-specialization-content {
+    flex: 1;
+    padding-top: 0;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.braille-specialization-content h2 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.braille-specialization-content h2 .highlight {
+    color: #4CAF50;
+}
+
+.braille-specialization-content h3 {
+    color: #444;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.braille-specialization-content p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.braille-specialization-content .braille-features {
+    margin: 2rem 0;
+    padding: 0;
+    list-style: none;
+}
+
+.braille-specialization-content .braille-features li {
+    color: #444;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.braille-specialization-content .braille-features i {
+    color: #4CAF50;
+    margin-right: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.braille-specialization-content .cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 1rem;
+    border: 2px solid #4CAF50;
+}
+
+.braille-specialization-content .cta-button:hover {
+    background-color: transparent;
+    color: #4CAF50;
+}
+
+.braille-specialization-image {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.braille-specialization-image:hover {
+    transform: translateY(-5px);
+}
+
+.braille-specialization-image {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Image styles are now handled by .image-wrapper */
+
+.braille-products-button {
+    display: block;
+    padding: 12px 30px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 2px solid #4CAF50;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    margin: 1.5rem auto 0;
+}
+
+.braille-products-button:hover {
+    background-color: #43a047;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.image-button-container {
+    width: 100%;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.image-button-container .cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 30px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 2px solid #4CAF50;
+    width: 100%;
+    max-width: 280px;
+}
+
+.image-button-container .cta-button:hover {
+    background-color: #43a047;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.braille-specialization-image:hover img {
+    transform: scale(1.03);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .braille-specialization-container {
+        flex-direction: column;
+        gap: 3rem;
+        padding: 0 2rem;
+    }
+    
+    .braille-specialization-content {
+        text-align: center;
+    }
+    
+    .braille-specialization-content .braille-features {
+        max-width: 500px;
+        margin: 2rem auto;
+    }
+    
+    .braille-specialization-image {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .braille-specialization-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .braille-specialization-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .braille-specialization-content p {
+        font-size: 1rem;
+    }
+    
+    .braille-specialization-image {
+        max-width: 100%;
+    }
+}
+
+/* Braille Information Section */
+.braille-info-section {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+}
+
+.braille-info-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.braille-info-text {
+    flex: 1;
+}
+
+.braille-info-text h2 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.braille-info-text p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.braille-features {
+    margin: 2rem 0;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.feature i {
+    color: #4CAF50;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.feature span {
+    color: #444;
+    font-size: 1rem;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 2px solid #4CAF50;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.learn-more-btn:hover {
+    background-color: #43a047;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: white;
+}
+
+.braille-info-image {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.braille-info-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.braille-info-image:hover img {
+    transform: scale(1.03);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .braille-info-container {
+        flex-direction: column;
+        gap: 3rem;
+        padding: 0 2rem;
+    }
+    
+    .braille-info-text {
+        text-align: center;
+    }
+    
+    .braille-features {
+        max-width: 500px;
+        margin: 2rem auto;
+    }
+    
+    .braille-info-image {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .braille-info-section {
+        padding: 3rem 0;
+    }
+    
+    .braille-info-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .braille-info-text p {
+        font-size: 1rem;
+    }
+    
+    .braille-info-image {
+        max-width: 100%;
+    }
+}
