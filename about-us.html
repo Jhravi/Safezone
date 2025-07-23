@@ -1002,9 +1002,12 @@
                 <div class="company-about" style="display: flex; flex-direction: row; align-items: stretch; gap: 32px; min-height: 240px;">
                     <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
                         <h3>Company Overview</h3>
-                        <p style="font-size:1.08rem; color:#222; background: #f6faff; border-radius: 10px; padding: 22px 28px; box-shadow: 0 2px 12px rgba(0,86,179,0.07); line-height:1.8; margin-bottom:0;">
-                            Anand Sales (INDIA), established in 1985, is a leading provider of total safety solutions in India, trusted by national and multinational clients for over four decades. Our SAFE ZONE brand is synonymous with quality, innovation, and reliability, offering a comprehensive range of products for traffic, industrial, indoor, and public safety. As an authorized converter of Avery Dennison, we deliver world-class reflective signage and safety systems, backed by 7–12 years of warranty and strict quality assurance in our 10,000 sq. ft. facility. We are proud to support the “Accessible India Campaign” with our advanced accessibility products, designed to create barrier-free environments for people with disabilities and the elderly. At Anand Sales (INDIA), we are committed to customer satisfaction, continuous improvement, and making India safer, one solution at a time.
-                        </p>
+                        <div style="font-size:1.08rem; color:#222; background: #f6faff; border-radius: 10px; padding: 22px 28px; box-shadow: 0 2px 12px rgba(0,86,179,0.07); line-height:1.8; margin-bottom:0;">
+                            <strong>Anand Sales (INDIA)</strong> is one of the leading total safety solutions provider with a wide range of safety solutions ranging from traffic to indoor safety and from industrial to public safety. Incorporated in 1985, <strong>Anand Sales (INDIA)</strong> has been the #1 choice of national and multi-national clients operating in India. Our brand, <strong>SAFE ZONE</strong> has proven its ability to consistently provide products that meet customer and applicable regulatory requirements.<br><br>
+                            We are thrilled to have added another feather to our cap by launching a revolutionary line of accessibility products. Committed to creating a barrier-free environment for people with disabilities and the elderly. Our new offerings seamlessly align with the objectives of the <strong>“Accessible India Campaign”</strong> – an initiative by the Government of India. Our manufactured products are in line with <strong>National Building Code of India</strong>.<br><br>
+                            We are authorized converter of <strong>Avery Dennison</strong>, the global leader and manufacturer of pressure-sensitive reflective materials, which has enhanced our quality standards, thus, enabling us to provide high-quality signage systems to a developing nation like India. We aim to enhance customer satisfaction through effective application of the latest technology system and backing our in-house manufactured signs with 7–12 years of warranty.<br><br>
+                            With <strong>10,000 square feet</strong> of industrial space, all our safety equipment is closely inspected and checked for quality assurance to enable us to deliver high-quality products that match world-class standards.
+                        </div>
                                             </div>
                     <img src="images/office.jpg" alt="Office" style="width: 100%; max-width: 260px; height: 100%; max-height: 400px; object-fit: cover; border-radius: 16px; background: #eee; flex-shrink: 0; align-self: stretch; display: block;">
                 </div>
@@ -1292,4 +1295,71 @@
         });
     </script>
     </body>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <style>
+        /* Scroll to Top Button Styles */
+        .scroll-to-top {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            bottom: 100px;
+            right: 30px;
+            background-color: #1976d2;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-to-top:hover {
+            background-color: #1565c0;
+            transform: translateY(-3px);
+        }
+        
+        .scroll-to-top i {
+            margin-top: 2px;
+        }
+    </style>
+
+    <script>
+        // Scroll to Top Button Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            
+            // Show/Hide button on scroll
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('visible');
+                } else {
+                    scrollToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            // Smooth scroll to top when clicked
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </html>

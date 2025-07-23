@@ -260,9 +260,9 @@
                 <li class="dropdown">
                     <a href="vehicle-graphics.html">Vehicle Graphics <span class="dropdown-arrow">▾</span></a>
                     <ul class="dropdown-menu vertical-menu">
-                        <li><a href="vehicle-graphics.html#reflective-vehicle-tapes">Reflective Vehicle Tapes</a></li>
-                        <li><a href="vehicle-graphics.html#vehicle-branding">Vehicle Graphics</a></li>
-                        <li><a href="vehicle-graphics.html#number-plates">Revolving Lights Siren & Strobe Lights</a></li>
+                        <li><a href="vehicle-graphics.html#Reflective-vehicle-tapes">1. Reflective Vehicle Tapes</a></li>
+                        <li><a href="vehicle-graphics.html#Vehicle-Graphics">2. Vehicle Graphics</a></li>
+                        <li><a href="vehicle-graphics.html#Revolving-Lights-Siren-Strobe-Lights">3. Revolving Lights, Siren & Strobe Lights</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -395,3 +395,70 @@
                     </div>
                 </footer>
             </div>
+            <!-- Scroll to Top Button -->
+            <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Scroll to top">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+
+            <style>
+                /* Scroll to Top Button Styles */
+                .scroll-to-top {
+                    position: fixed;
+                    width: 50px;
+                    height: 50px;
+                    bottom: 100px;
+                    right: 30px;
+                    background-color: #1976d2;
+                    color: #fff;
+                    border: none;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    font-size: 20px;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all 0.3s ease;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 9999;
+                }
+                
+                .scroll-to-top.visible {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                
+                .scroll-to-top:hover {
+                    background-color: #1565c0;
+                    transform: translateY(-3px);
+                }
+                
+                .scroll-to-top i {
+                    margin-top: 2px;
+                }
+            </style>
+
+            <script>
+                // Scroll to Top Button Functionality
+                document.addEventListener('DOMContentLoaded', function() {
+                    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+                    
+                    // Show/Hide button on scroll
+                    window.addEventListener('scroll', function() {
+                        if (window.pageYOffset > 300) {
+                            scrollToTopBtn.classList.add('visible');
+                        } else {
+                            scrollToTopBtn.classList.remove('visible');
+                        }
+                    });
+                    
+                    // Smooth scroll to top when clicked
+                    scrollToTopBtn.addEventListener('click', function() {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+            </script>
