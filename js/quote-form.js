@@ -27,45 +27,32 @@ function closeQuoteModal() {
 // Function to handle form submission
 function submitQuoteForm(event) {
     event.preventDefault();
-    
-    // Get form data
     const form = event.target;
-    const formData = new FormData(form);
     const submitButton = form.querySelector('button[type="submit"]');
     const originalButtonText = submitButton.textContent;
-    
-    // Show loading state
     submitButton.disabled = true;
     submitButton.textContent = 'Sending...';
-    
-    // Set the form action with the current product
-    const productName = document.getElementById('Customer Enquiry Form').value;
-    const formAction = `https://formsubmit.co/el/gamuso?subject=Quote Request for ${encodeURIComponent(productName)}`;
-    
-    // Submit the form using FormSubmit.co
-    fetch(formAction, {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        // Show success message
+
+    // Submit the form using a hidden iframe to avoid redirect
+    const iframe = document.createElement('iframe');
+    iframe.name = 'hidden_iframe';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+    form.target = 'hidden_iframe';
+    form.action = 'https://formsubmit.co/anandsalesindia@gmail.com';
+    form.method = 'POST';
+
+    // Show thank you message after a short delay
+    setTimeout(() => {
         showThankYouMessage();
-        // Reset form
         form.reset();
-        // Close modal after delay
-        setTimeout(closeQuoteModal, 2000);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('There was an error submitting your request. Please try again later.');
-    })
-    .finally(() => {
-        // Reset button state
         submitButton.disabled = false;
         submitButton.textContent = originalButtonText;
-    });
-    
+        setTimeout(closeQuoteModal, 2000);
+        document.body.removeChild(iframe);
+    }, 1200);
+
+    form.submit();
     return false;
 }
 
