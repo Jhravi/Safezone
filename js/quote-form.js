@@ -33,14 +33,10 @@ function submitQuoteForm(event) {
     submitButton.disabled = true;
     submitButton.textContent = 'Sending...';
 
-    // Submit the form using a hidden iframe to avoid redirect
-    const iframe = document.createElement('iframe');
-    iframe.name = 'hidden_iframe';
-    iframe.style.display = 'none';
-    document.body.appendChild(iframe);
-    form.target = 'hidden_iframe';
-    form.action = 'https://formsubmit.co/anandsalesindia@gmail.com';
-    form.method = 'POST';
+    // Send form data to FormSubmit
+      fetch('https://formsubmit.co/ajax/jhravindra@gmail.com', {
+        method: 'POST',
+        body: formData
 
     // Show thank you message after a short delay
     setTimeout(() => {
