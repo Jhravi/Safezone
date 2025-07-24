@@ -42,14 +42,20 @@ function submitQuoteForm(event) {
     // Create FormData object from the form
     const formData = new FormData(form);
     
-    // Send form data using fetch API
+    // For local development, we'll use a different approach
+    // First, try the FormSubmit API
     fetch('https://formsubmit.co/ajax/jhravindra@gmail.com', {
         method: 'POST',
-        body: formData
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(Object.fromEntries(formData))
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            // If FormSubmit fails, try a different approach
+            throw new Error('FormSubmit failed, trying alternative method');
         }
         return response.json();
     })
@@ -57,13 +63,26 @@ function submitQuoteForm(event) {
         // Show success message
         showThankYouMessage();
         form.reset();
-        
-        // Close modal after delay
         setTimeout(closeQuoteModal, 2000);
     })
     .catch(error => {
-        console.error('Error:', error);
-        alert('There was an error submitting the form. Please try again later.');
+        console.warn('FormSubmit failed, trying alternative method:', error);
+        
+        // Fallback method: Open mailto link
+        const email = 'jhravindra@gmail.com';
+        const subject = 'Quote Request: ' + (formData.get('product') || 'General Enquiry');
+        const body = `Name: ${formData.get('name')}%0D%0A` +
+                    `Email: ${formData.get('email')}%0D%0A` +
+                    `Mobile: ${formData.get('mobile')}%0D%0A` +
+                    `Product: ${formData.get('product')}%0D%0A` +
+                    `Message: ${formData.get('message')}`;
+        
+        window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
+        
+        // Show success message since we've redirected to mail client
+        showThankYouMessage();
+        form.reset();
+        setTimeout(closeQuoteModal, 2000);
     })
     .finally(() => {
         // Reset button state
