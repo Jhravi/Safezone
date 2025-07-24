@@ -33,30 +33,46 @@ function submitQuoteForm(event) {
     var form = event.target;
     var submitButton = form.querySelector('button[type="submit"]');
     var originalButtonText = submitButton ? submitButton.textContent : '';
+    
     if (submitButton) {
         submitButton.disabled = true;
         submitButton.textContent = 'Sending...';
     }
-    // Submit the form using a hidden iframe to avoid redirect
-    var iframe = document.createElement('iframe');
-    iframe.name = 'hidden_iframe';
-    iframe.style.display = 'none';
-    document.body.appendChild(iframe);
-    form.target = 'hidden_iframe';
-    form.action = 'https://formsubmit.co/ajax/jhravindra@gmail.com';
-    form.method = 'POST';
-    // Show thank you message after a short delay
-    setTimeout(function() {
+
+    // Create FormData object from the form
+    const formData = new FormData(form);
+    
+    // Send form data using fetch API
+    fetch('https://formsubmit.co/ajax/jhravindra@gmail.com', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Show success message
         showThankYouMessage();
         form.reset();
+        
+        // Close modal after delay
+        setTimeout(closeQuoteModal, 2000);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error submitting the form. Please try again later.');
+    })
+    .finally(() => {
+        // Reset button state
         if (submitButton) {
             submitButton.disabled = false;
             submitButton.textContent = originalButtonText;
         }
-        setTimeout(closeQuoteModal, 2000);
-        document.body.removeChild(iframe);
-    }, 1200);
-    form.submit();
+    });
+    
     return false;
 }
 
