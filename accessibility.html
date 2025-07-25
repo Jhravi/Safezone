@@ -58,11 +58,11 @@
                 <li class="dropdown">
                     <a href="braille.html">Braille <span class="dropdown-arrow">▾</span></a>
                     <ul class="dropdown-menu vertical-menu">
-                        <li><a href="braille.html#braille-signages">1. Braille Signages</a></li>
-                        <li><a href="braille.html#braille-handrail">2. Braille Handrail Signs</a></li>
-                        <li><a href="braille.html#pu-tactile-tiles">3. PU Tactile Tiles, Studs & Directional Strips</a></li>
-                        <li><a href="braille.html#wc-alarm-system">4. Differently-Abled W/C Alarm System</a></li>
-                        <li><a href="braille.html#braille-layout-plan">5. Braille Tactile Layout Plan</a></li>
+                        <li><a href="braille.html#braille-signages">Braille Signages</a></li>
+                        <li><a href="braille.html#braille-handrail">Braille Handrail Signs</a></li>
+                        <li><a href="braille.html#pu-tactile-tiles">PU Tactile Tiles, Studs & Directional Strips</a></li>
+                        <li><a href="braille.html#wc-alarm-system">Differently-Abled W/C Alarm System</a></li>
+                        <li><a href="braille.html#braille-layout-plan">Braille Tactile Layout Plan</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -113,19 +113,6 @@
                     position: absolute;
                     left: 0;
                     width: 280px; /* Reduced width */
-                }
-                /* Show dropdown on hover for desktop */
-                @media (hover: hover) and (pointer: fine) {
-                  .dropdown:hover > .dropdown-menu,
-                  .dropdown:focus-within > .dropdown-menu,
-                  .dropdown-menu.vertical-menu:hover,
-                  .dropdown-menu.vertical-menu:focus {
-                    display: block !important;
-                  }
-                }
-                .dropdown-menu.vertical-menu {
-                  z-index: 9999;
-                }
                     max-width: 95vw;
                     height: auto;
                     max-height: 240px; /* Height for exactly 5 items (40px each * 5 + padding) */
@@ -243,6 +230,9 @@
                 /* .dropdown:hover .dropdown-menu.vertical-menu {
                     display: block;
                 } */
+                .dropdown-menu.vertical-menu.show {
+                    display: block !important;
+                }
                 
                 @media (max-width: 600px) {
                     .dropdown-menu.vertical-menu {
@@ -333,7 +323,6 @@
                 <div style="display: flex; align-items: flex-start; gap: 32px; flex-wrap: wrap; justify-content: space-between;">
                     <div style="flex: 1 1 340px; min-width: 220px; max-width: 700px;">
                         <h2 style="margin: 0 0 8px 0 !important; color: #0056b3; font-size: 20px !important; text-align: left; padding: 0 0 0 10px !important; border-left: 4px solid #0056b3; line-height: 1.2 !important;"><strong>Layout Plans</strong></h2>
-                        <a href="#layout-plans" style="color: #0056b3; font-size: 1.08rem; text-decoration: underline; font-weight: 500;">Layout Plans</a>
                         <p style="margin: 10px 0 0 0; color: #333; font-size: 1rem; line-height: 1.5;">
                             Layout plans with tactile and Braille elements help visually impaired users navigate buildings independently by understanding spatial structures. These plans provide a clear, touchable overview of the building's layout, including key areas like entrances, exits, restrooms, and emergency exits. Typically installed at main entry points, they enable users to form a mental map of the space before navigating. Our layout plans are designed to meet international accessibility standards, ensuring they are intuitive and easy to understand for all users.
                         </p>
@@ -359,7 +348,7 @@
                         </div>
                         <div style="flex: 1 1 340px; min-width: 220px; max-width: 700px;">
                             <h2 style="margin: 0 0 8px 0 !important; color: #0056b3; font-size: 20px !important; text-align: left; padding: 0 0 0 10px !important; border-left: 4px solid #0056b3; line-height: 1.2 !important;"><strong>Tactile Map</strong></h2>
-                            <a href="#tactile-map" style="color: #0056b3; font-size: 1.08rem; text-decoration: underline; font-weight: 500;">Tactile Map</a>
+                            
                             <p style="margin: 10px 0 0 0; color: #333; font-size: 1rem; line-height: 1.5;">
                                 Tactile maps feature raised surfaces and textures that allow visually impaired individuals to understand floor layouts and pathways through touch. These maps enhance spatial awareness and independence by providing a detailed, touchable representation of the surrounding environment. Ideal for complex buildings, campuses, and public spaces, our tactile maps use standardized symbols and textures to indicate different areas, pathways, and points of interest. They are designed to be intuitive, with clear tactile differentiation between different spaces and features, making navigation easier and more predictable for users with visual impairments.
                             </p>
@@ -379,7 +368,7 @@
                 <div style="display: flex; align-items: flex-start; gap: 32px; flex-wrap: wrap; justify-content: space-between;">
                     <div style="flex: 1 1 340px; min-width: 220px; max-width: 700px;">
                         <h2 style="margin: 0 0 8px 0 !important; color: #0056b3; font-size: 20px !important; text-align: left; padding: 0 0 0 10px !important; border-left: 4px solid #0056b3; line-height: 1.2 !important;"><strong>Audio Tactile Map</strong></h2>
-                        <a href="#audio-tactile-map" style="color: #0056b3; font-size: 1.08rem; text-decoration: underline; font-weight: 500;">Audio Tactile Map</a>
+                        
                         <p style="margin: 10px 0 0 0; color: #333; font-size: 1rem; line-height: 1.5;">
                             Audio tactile maps combine the benefits of tactile graphics with audio descriptions to provide comprehensive navigation assistance. When users touch specific areas on the map, they trigger audio messages that provide detailed information about that location. These interactive maps are particularly valuable in transportation hubs, shopping centers, and educational institutions where complex spatial information needs to be conveyed. Our audio tactile maps feature high-quality speakers, intuitive touch points, and clear, concise audio recordings in multiple languages to accommodate diverse user needs.
                         </p>
@@ -407,7 +396,7 @@
                         </div>
                         <div style="flex: 1 1 340px; min-width: 220px; max-width: 700px;">
                             <h2 style="margin: 0 0 8px 0 !important; color: #0056b3; font-size: 20px !important; text-align: left; padding: 0 0 0 10px !important; border-left: 4px solid #0056b3; line-height: 1.2 !important;"><strong>Handrail Braille Indicator</strong></h2>
-                            <a href="#handrail-braille-indicator" style="color: #0056b3; font-size: 1.08rem; text-decoration: underline; font-weight: 500;">Handrail Braille Indicator</a>
+                            
                             <p style="margin: 10px 0 0 0; color: #333; font-size: 1rem; line-height: 1.5;">
                                 Handrail Braille indicators provide essential navigation information directly on handrails, helping visually impaired individuals identify floor levels, directions, and important locations while moving through a building. These indicators are seamlessly integrated into handrails at consistent intervals and feature both raised Braille and tactile characters. Made from durable materials that withstand frequent touch, they offer a reliable wayfinding solution that complements other accessibility features. Our Handrail Braille indicators are designed to meet international accessibility standards, ensuring they are easily detectable and readable by touch.
                             </p>
@@ -428,7 +417,7 @@
                 <div style="display: flex; align-items: flex-start; gap: 32px; flex-wrap: wrap; justify-content: space-between;">
                     <div style="flex: 1 1 340px; min-width: 220px; max-width: 700px;">
                         <h2 style="margin: 0 0 8px 0 !important; color: #0056b3; font-size: 20px !important; text-align: left; padding: 0 0 0 10px !important; border-left: 4px solid #0056b3; line-height: 1.2 !important;"><strong>EDGE Strips for Staircase</strong></h2>
-                        <a href="#edge-strips-staircase" style="color: #0056b3; font-size: 1.08rem; text-decoration: underline; font-weight: 500;">EDGE Strips for Staircase</a>
+                        
                         <p style="margin: 10px 0 0 0; color: #333; font-size: 1rem; line-height: 1.5;">
                             EDGE (Enhanced Detectable Ground Edge) Strips are essential safety features for staircases, providing both visual and tactile cues to mark step edges. These strips enhance stair safety by clearly defining each step's edge, reducing the risk of trips and falls for all users, especially those with visual impairments. The high-contrast colors and slip-resistant surface make them visible in various lighting conditions while providing additional traction. Our EDGE Strips are designed to be durable, weather-resistant, and easy to install on various staircase materials including concrete, wood, and metal.
                         </p>
@@ -455,7 +444,7 @@
                         </div>
                         <div style="flex: 1 1 340px; min-width: 220px; max-width: 700px;">
                             <h2 style="margin: 0 0 8px 0 !important; color: #0056b3; font-size: 20px !important; text-align: left; padding: 0 0 0 10px !important; border-left: 4px solid #0056b3; line-height: 1.2 !important;"><strong>PU Tactile Tiles</strong></h2>
-                            <a href="#pu-tactile-tiles" style="color: #0056b3; font-size: 1.08rem; text-decoration: underline; font-weight: 500;">PU Tactile Tiles</a>
+                            
                             <p style="margin: 10px 0 0 0; color: #333; font-size: 1rem; line-height: 1.5;">
                                 PU (Polyurethane) Tactile Tiles are durable, slip-resistant surface indicators designed for both indoor and outdoor use. These tiles provide essential tactile guidance for visually impaired individuals, featuring raised patterns that can be felt underfoot or with a cane. Available in various colors with high visual contrast, they help mark pathways, platform edges, and hazard areas. Our PU Tactile Tiles are weather-resistant, UV-stable, and maintain their color and texture even in high-traffic areas. They are easy to install and can be cut to fit specific spaces without specialized tools.
                             </p>
@@ -503,7 +492,7 @@
                     </div>
                     <div style="flex: 1 1 340px; min-width: 220px; max-width: 700px;">
                         <h2 style="margin: 0 0 8px 0 !important; color: #0056b3; font-size: 20px !important; text-align: left; padding: 0 0 0 10px !important; border-left: 4px solid #0056b3; line-height: 1.2 !important;"><strong>SS Railings</strong></h2>
-                        <a href="#ss-railings" style="color: #0056b3; font-size: 1.08rem; text-decoration: underline; font-weight: 500;">SS Railings</a>
+                        
                         <p style="margin: 10px 0 0 0; color: #333; font-size: 1rem; line-height: 1.5;">
                             Our Stainless Steel (SS) Railings are designed to provide safe and secure support while maintaining an elegant appearance. These railings are essential accessibility features for stairs, ramps, and elevated walkways, offering stability and guidance for all users, including those with mobility challenges. The smooth, corrosion-resistant stainless steel surface is easy to grip and maintain, making it ideal for both indoor and outdoor applications. We offer various designs that combine functionality with aesthetic appeal, from simple, clean lines to more elaborate patterns. All our SS Railings are installed at the proper height and include tactile indicators where needed to comply with accessibility standards.
                         </p>
