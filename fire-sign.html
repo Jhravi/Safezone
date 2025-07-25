@@ -292,6 +292,261 @@
         </div>
     </nav>
     <main>
+    <!-- Enquiry Form Modal (copied from accessibility.html) -->
+            <style>
+                #contactModal .modal-content {
+                    background: #fff;
+                    margin: 5% auto;
+                    padding: 0;
+                    border-radius: 16px;
+                    box-shadow: 0 10px 32px rgba(0,0,0,0.18);
+                    max-width: 380px;
+                    width: 95%;
+                    position: relative;
+                    border: none;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                #contactModal .close {
+                    position: absolute;
+                    right: 18px;
+                    top: 12px;
+                    font-size: 28px;
+                    font-weight: bold;
+                    color: #6c757d;
+                    cursor: pointer;
+                    transition: color 0.3s;
+                    z-index: 2;
+                }
+                #contactModal .close:hover {
+                    color: #dc3545;
+                }
+                #contactModal .contact-form {
+                    width: 100%;
+                    padding: 28px 24px 18px 24px;
+                    border-radius: 14px;
+                    background: #f8fafd;
+                    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+                    display: flex;
+                    flex-direction: column;
+                    gap: 14px;
+                    align-items: stretch;
+                    justify-content: center;
+                }
+                #contactModal .contact-form .form-group {
+                    width: 100%;
+                }
+                #contactModal .contact-form input,
+                #contactModal .contact-form textarea {
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+                #contactModal .contact-form .form-row {
+                    display: none;
+                }
+                #contactModal .contact-form label {
+                    font-size: 0.97rem;
+                    font-weight: 600;
+                    color: #2c3e50;
+                    margin-bottom: 4px;
+                    display: block;
+                }
+                #contactModal .contact-form input,
+                #contactModal .contact-form textarea {
+                    width: 100%;
+                    padding: 6px 10px;
+                    border: 1px solid #dbe3ea;
+                    border-radius: 7px;
+                    font-size: 0.97rem;
+                    background: #fff;
+                    margin-bottom: 2px;
+                    transition: border 0.2s, box-shadow 0.2s;
+                }
+                #contactModal .contact-form input:focus,
+                #contactModal .contact-form textarea:focus {
+                    border: 1.5px solid #1976d2;
+                    outline: none;
+                    box-shadow: 0 0 0 2px #e3f0fd;
+                }
+                #contactModal .contact-form textarea {
+                    min-height: 32px;
+                    max-height: 60px;
+                    resize: vertical;
+                }
+                #contactModal .contact-form button[type="submit"] {
+                    background: linear-gradient(90deg, #1976d2 0%, #0056b3 100%);
+                    color: #fff;
+                    border: none;
+                    padding: 11px 0;
+                    border-radius: 7px;
+                    font-weight: 700;
+                    font-size: 1.05rem;
+                    letter-spacing: 0.5px;
+                    box-shadow: 0 2px 10px rgba(25,118,210,0.10);
+                    cursor: pointer;
+                    margin-top: 6px;
+                    transition: background 0.2s, box-shadow 0.2s;
+                    width: 100%;
+                }
+                #contactModal .contact-form button[type="submit"]:hover {
+                    background: linear-gradient(90deg, #0056b3 0%, #1976d2 100%);
+                    box-shadow: 0 4px 18px rgba(25,118,210,0.18);
+                }
+                #contactModal .contact-form .form-row {
+                    display: flex;
+                    gap: 10px;
+                }
+                #contactModal .contact-form .form-row > div {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                }
+                #contactModal .contact-form .form-row {
+                    margin-bottom: 0;
+                }
+                #contactModal .contact-form .form-group {
+                    display: flex;
+                    flex-direction: column;
+                }
+                #contactModal .contact-form .form-group:last-child {
+                    margin-bottom: 0;
+                }
+                #contactModal .contact-form input[type="hidden"] {
+                    display: none;
+                }
+                #contactModal .contact-form .form-title {
+                    text-align: center;
+                    font-size: 1.35rem;
+                    font-weight: 700;
+                    color: #1976d2;
+                    margin-bottom: 8px;
+                }
+                #contactModal .contact-form .form-desc {
+                    text-align: center;
+                    font-size: 0.98rem;
+                    color: #495057;
+                    margin-bottom: 10px;
+                }
+            </style>
+            <div id="contactModal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6);">
+                <div class="modal-content">
+                    <span class="close" onclick="closeContactModal()">&times;</span>
+                    <form id="contactForm" class="contact-form" onsubmit="handleContactForm(event)">
+                        <div class="form-title">Enquiry Form</div>
+                        <div class="form-desc">Please fill out the form below and our team will get back to you soon.</div>
+                        <input type="hidden" name="product" id="contactProduct" value="">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Enter 10-digit number" required pattern="[0-9]{10}" title="Please enter a 10-digit phone number">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" id="contactSubject" placeholder="Enter subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="2" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane" style="margin-right: 6px;"></i> Send Enquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+    <script>
+        // Function to open contact form
+        function openContactForm(productName) {
+            const modal = document.getElementById('contactModal');
+            const productField = document.getElementById('contactProduct');
+            const subjectField = document.getElementById('contactSubject');
+            
+            if (productName) {
+                productField.value = productName;
+                subjectField.value = 'Quote Request: ' + productName;
+            }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Function to close contact form
+        function closeContactModal() {
+            const modal = document.getElementById('contactModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Handle form submission
+        function handleContactForm(event) {
+            event.preventDefault();
+            const form = event.target;
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            
+            // Disable button and show loading
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+            
+            // Create FormData
+            const formData = new FormData(form);
+            
+            // Try FormSubmit first
+            fetch('https://formsubmit.co/ajax/anandsalesindia@gmail.com', {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(Object.fromEntries(formData))
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('FormSubmit failed');
+                return response.json();
+            })
+            .then(data => {
+                showThankYouMessage();
+                form.reset();
+                setTimeout(closeContactModal, 2000);
+            })
+            .catch(error => {
+                console.warn('FormSubmit failed, trying mailto:', error);
+                // Fallback to mailto
+                const email = 'anandsalesindia@gmail.com';
+                const subject = form.querySelector('[name="subject"]').value;
+                const body = Array.from(formData.entries())
+                    .map(([key, value]) => `${key}: ${value}`)
+                    .join('\n\n');
+                
+                window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                
+                showThankYouMessage();
+                form.reset();
+                setTimeout(closeContactModal, 2000);
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+            });
+        }
+        
+        // Show thank you message (reusing existing function)
+        function showThankYouMessage() {
+            alert('Thank you for your message! We will get back to you soon.');
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('contactModal');
+            if (event.target === modal) {
+                closeContactModal();
+            }
+        }
+    </script>
         <header class="video-header" style="position: relative; height: 45vh; min-height: 250px; overflow: hidden;">
             <img src="images/Fire sign.png" alt="Fire Safety Header" style="position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: top center;">
             <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4);">
@@ -316,7 +571,7 @@
             <div class="category-description" style="text-align: left; margin: 0; padding: 0;">
             </div>
             <!-- Handheld Metal Detectors Section -->
-            <section id="handheld-metal-detectors" style="margin: 0 auto 12px auto !important; padding: 30px 20px !important; scroll-margin-top: 15vh; max-width: 1200px; background: #fff; border-radius: 10px;">
+            <section id="fire-exit" style="margin: 0 auto 12px auto !important; padding: 30px 20px !important; scroll-margin-top: 15vh; max-width: 1200px; background: #fff; border-radius: 10px;">
                 <div style="display: flex; align-items: flex-start; gap: 32px; flex-wrap: wrap; justify-content: space-between;">
                     <div style="flex: 1 1 340px; min-width: 220px; max-width: 700px;">
                         <h2 style="margin: 0 0 8px 0 !important; color: #0056b3; font-size: 20px !important; text-align: left; padding: 0 0 0 10px !important; border-left: 4px solid #0056b3; line-height: 1.2 !important;">Fire Signages</h2>
@@ -329,8 +584,8 @@
                                 Made from glow-in-dark vinyl, aluminum sheets, acrylic panels, and weatherproof laminated boards.
                             </p>
                         </div>
-                        <button class="btn quote-btn" onclick="openQuoteForm('Fire Signages')" style="background-color: #0056b3; color: #fff; padding: 7px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 0.95rem; margin-top: 10px; transition: background-color 0.3s ease;">
-                            Get Quote
+                        <button class="btn quote-btn" onclick="openContactForm('Fire Signages')" style="background-color: #0056b3; color: #fff; padding: 7px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 0.95rem; margin-top: 10px; transition: background-color 0.3s ease;">
+                        Get Quote
                         </button>
                     </div>
                     <div style="flex: 0 0 450px; display: flex; justify-content: center; align-items: center; min-width: 300px; max-width: 400px;">
@@ -345,247 +600,3 @@
                     </div>
                 </footer>
             </div>
-
-            <!-- Include Quote Form -->
-            <div id="quoteModal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6);">
-                <div class="modal-content" style="background-color: #fefefe; margin: 10% auto; padding: 25px; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.3); max-width: 500px; width: 90%; position: relative;">
-                    <span class="close" onclick="closeQuoteModal()" style="position: absolute; right: 20px; top: 10px; font-size: 28px; font-weight: bold; color: #777; cursor: pointer;">&times;</span>
-                    
-                    <h2 style="color: #0056b3; margin-top: 0; margin-bottom: 20px; font-size: 1.5rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">Customer Enquiry Form</h2>
-                    
-                    <form id="quoteForm" onsubmit="return submitQuoteForm(event)" style="display: flex; flex-direction: column; gap: 15px;">
-                        <div class="form-group">
-                            <label for="name" style="display: block; margin-bottom: 5px; font-weight: 600; color: #333;">Name:</label>
-                            <input type="text" id="name" name="name" required 
-                                   style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;"
-                                   placeholder="Your name">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="mobile" style="display: block; margin-bottom: 5px; font-weight: 600; color: #333;">Mobile No.:</label>
-                            <input type="tel" id="mobile" name="mobile" required 
-                                   style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;"
-                                   placeholder="Your mobile number" pattern="[0-9]{10}" title="Please enter a 10-digit mobile number">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="productName" style="display: block; margin-bottom: 5px; font-weight: 600; color: #333;">Product:</label>
-                            <input type="text" id="productName" name="product" readonly 
-                                   style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; background-color: #f5f5f5;"
-                                   placeholder="Product name will be auto-filled">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" style="display: block; margin-bottom: 5px; font-weight: 600; color: #333;">Message:</label>
-                            <textarea id="message" name="message" rows="4" required 
-                                     style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; resize: vertical; min-height: 100px;"
-                                     placeholder="Your message or additional details"></textarea>
-                        </div>
-                        
-                        <div style="display: flex; gap: 10px; margin-top: 10px;">
-                            <button type="submit" style="background-color: #0056b3; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: 600; flex: 1;">
-                                Send Enquiry
-                            </button>
-                            <button type="button" onclick="closeQuoteModal()" style="background-color: #f0f0f0; color: #333; border: 1px solid #ddd; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: 500; flex: 1;">
-                                Cancel
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Include Quote Form JavaScript -->
-            <script>
-                // Function to open the quote form modal
-                function openQuoteForm(productName) {
-                    const modal = document.getElementById('quoteModal');
-                    const productInput = document.getElementById('productName');
-                    
-                    // Set the product name in the form
-                    if (productInput) {
-                        productInput.value = productName || '';
-                    }
-                    
-                    // Show the modal
-                    if (modal) {
-                        modal.style.display = 'block';
-                        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-                    }
-                }
-
-                // Function to close the quote form modal
-                function closeQuoteModal() {
-                    const modal = document.getElementById('quoteModal');
-                    if (modal) {
-                        modal.style.display = 'none';
-                        document.body.style.overflow = 'auto'; // Re-enable scrolling
-                    }
-                }
-
-                // Function to handle form submission
-                function submitQuoteForm(event) {
-                    event.preventDefault();
-                    
-                    // Get form data
-                    const form = event.target;
-                    const formData = new FormData(form);
-                    const submitButton = form.querySelector('button[type="submit"]');
-                    const originalButtonText = submitButton.textContent;
-                    
-                    // Show loading state
-                    submitButton.disabled = true;
-                    submitButton.textContent = 'Sending...';
-                    
-                    // Send form data using FormSubmit.co
-                    fetch('https://formsubmit.co/ajax/el/gamuso', {
-                        method: 'POST',
-                        headers: { 
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            name: formData.get('name'),
-                            mobile: formData.get('mobile'),
-                            product: formData.get('product'),
-                            message: formData.get('message'),
-                            _subject: 'New Quote Request from ' + formData.get('name'),
-                            _template: 'table',
-                            _autoresponse: 'Thank you for your inquiry. We have received your message and will get back to you shortly.'
-                        })
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        // Show success message
-                        showThankYouMessage();
-                        // Reset form
-                        form.reset();
-                        // Close modal after delay
-                        setTimeout(closeQuoteModal, 2000);
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('There was an error submitting your request. Please try again later.');
-                    })
-                    .finally(() => {
-                        // Reset button state
-                        submitButton.disabled = false;
-                        submitButton.textContent = originalButtonText;
-                    });
-                    
-                    return false;
-                }
-
-                // Function to show thank you message
-                function showThankYouMessage() {
-                    const thankYouMessage = document.createElement('div');
-                    thankYouMessage.id = 'thankYouMessage';
-                    thankYouMessage.style.position = 'fixed';
-                    thankYouMessage.style.top = '50%';
-                    thankYouMessage.style.left = '50%';
-                    thankYouMessage.style.transform = 'translate(-50%, -50%)';
-                    thankYouMessage.style.backgroundColor = 'white';
-                    thankYouMessage.style.padding = '20px 40px';
-                    thankYouMessage.style.borderRadius = '8px';
-                    thankYouMessage.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
-                    thankYouMessage.style.zIndex = '1001';
-                    thankYouMessage.style.textAlign = 'center';
-                    thankYouMessage.style.fontSize = '1.1rem';
-                    thankYouMessage.style.color = '#0056b3';
-                    thankYouMessage.style.fontWeight = '500';
-                    thankYouMessage.textContent = 'Thank you for submitting your query — we\'ll get back to you shortly.';
-                    
-                    document.body.appendChild(thankYouMessage);
-                    
-                    // Remove message after 3 seconds
-                    setTimeout(() => {
-                        thankYouMessage.style.transition = 'opacity 0.5s';
-                        thankYouMessage.style.opacity = '0';
-                        setTimeout(() => {
-                            document.body.removeChild(thankYouMessage);
-                        }, 500);
-                    }, 3000);
-                }
-
-                // Close modal when clicking outside of it
-                window.onclick = function(event) {
-                    const modal = document.getElementById('quoteModal');
-                    if (event.target === modal) {
-                        closeQuoteModal();
-                    }
-                }
-
-                // Close modal with Escape key
-                document.addEventListener('keydown', function(event) {
-                    const modal = document.getElementById('quoteModal');
-                    if (event.key === 'Escape' && modal && modal.style.display === 'block') {
-                        closeQuoteModal();
-                    }
-                });
-            </script>
-            <!-- Scroll to Top Button -->
-            <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Scroll to top">
-                <i class="fas fa-arrow-up"></i>
-            </button>
-
-            <style>
-                /* Scroll to Top Button Styles */
-                .scroll-to-top {
-                    position: fixed;
-                    width: 50px;
-                    height: 50px;
-                    bottom: 100px;
-                    right: 30px;
-                    background-color: #1976d2;
-                    color: #fff;
-                    border: none;
-                    border-radius: 50%;
-                    cursor: pointer;
-                    font-size: 20px;
-                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-                    opacity: 0;
-                    visibility: hidden;
-                    transition: all 0.3s ease;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    z-index: 9999;
-                }
-                
-                .scroll-to-top.visible {
-                    opacity: 1;
-                    visibility: visible;
-                }
-                
-                .scroll-to-top:hover {
-                    background-color: #1565c0;
-                    transform: translateY(-3px);
-                }
-                
-                .scroll-to-top i {
-                    margin-top: 2px;
-                }
-            </style>
-
-            <script>
-                // Scroll to Top Button Functionality
-                document.addEventListener('DOMContentLoaded', function() {
-                    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-                    
-                    // Show/Hide button on scroll
-                    window.addEventListener('scroll', function() {
-                        if (window.pageYOffset > 300) {
-                            scrollToTopBtn.classList.add('visible');
-                        } else {
-                            scrollToTopBtn.classList.remove('visible');
-                        }
-                    });
-                    
-                    // Smooth scroll to top when clicked
-                    scrollToTopBtn.addEventListener('click', function() {
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
-                    });
-                });
-            </script>

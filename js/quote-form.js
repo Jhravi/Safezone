@@ -44,7 +44,7 @@ function submitQuoteForm(event) {
     
     // For local development, we'll use a different approach
     // First, try the FormSubmit API
-    fetch('https://formsubmit.co/ajax/jhravindra@gmail.com', {
+    fetch('https://formsubmit.co/jhravindra@gmail.com', {
         method: 'POST',
         headers: { 
             'Content-Type': 'application/json',
